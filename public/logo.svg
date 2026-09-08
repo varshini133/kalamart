@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left Decorative Pillar with Traditional Warli/Tribal Chevron -->
+  <rect x="260" y="145" width="120" height="590" rx="14" fill="#B84318" />
+
+  <!-- White Chevron Zigzag Pattern -->
+  <path
+    d="M 360 185 L 280 230 L 360 275 L 280 320 L 360 365 L 280 410 L 360 455 L 280 500 L 360 545 L 280 590 L 360 635 L 280 680 L 305 695"
+    stroke="#FFFFFF"
+    stroke-width="15"
+    stroke-linecap="round"
+    stroke-linejoin="miter"
+    stroke-miterlimit="3"
+    fill="none"
+  />
+
+  <!-- Left Column Dots -->
+  <circle cx="290" cy="185" r="11" fill="#FFFFFF" />
+  <circle cx="290" cy="275" r="11" fill="#FFFFFF" />
+  <circle cx="290" cy="365" r="11" fill="#FFFFFF" />
+  <circle cx="290" cy="455" r="11" fill="#FFFFFF" />
+  <circle cx="290" cy="545" r="11" fill="#FFFFFF" />
+  <circle cx="290" cy="635" r="11" fill="#FFFFFF" />
+
+  <!-- Right Column Dots -->
+  <circle cx="345" cy="230" r="11" fill="#FFFFFF" />
+  <circle cx="345" cy="320" r="11" fill="#FFFFFF" />
+  <circle cx="345" cy="410" r="11" fill="#FFFFFF" />
+  <circle cx="345" cy="500" r="11" fill="#FFFFFF" />
+  <circle cx="345" cy="590" r="11" fill="#FFFFFF" />
+  <circle cx="345" cy="680" r="11" fill="#FFFFFF" />
+
+  <!-- Vertical Middle Strip -->
+  <rect x="392" y="145" width="30" height="590" rx="8" fill="#B84318" />
+
+  <!-- Diagonal Upper Arm of "K" (Beveled horizontal top edge) -->
+  <path d="M 422 445 L 628 180 H 768 L 542 475 Z" fill="#B84318" />
+
+  <!-- Diagonal Lower Leg of "K" -->
+  <path d="M 422 430 L 596 688 Q 604 700 618 690 L 672 630 L 540 440 Z" fill="#B84318" />
+
+  <!-- Accent Circular Dot at the base -->
+  <circle cx="698" cy="678" r="62" fill="#B84318" />
+</svg>

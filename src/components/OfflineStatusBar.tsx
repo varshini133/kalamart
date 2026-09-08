@@ -1,0 +1,166 @@
+import React from 'react';
+import { Language, SyncStatus } from '../types';
+
+interface OfflineStatusBarProps {
+  isOnline: boolean;
+  onToggleOnline: () => void;
+  pendingSyncCount: number;
+  lastSyncStatus: SyncStatus;
+  language: Language;
+  onOpenSyncQueue?: () => void;
+  onOpenDemo?: () => void;
+  isSyncing?: boolean;
+  syncSuccessMessage?: string | null;
+}
+
+export const OfflineStatusBar: React.FC<OfflineStatusBarProps> = ({
+  isOnline,
+  onToggleOnline,
+  pendingSyncCount,
+  lastSyncStatus,
+  language,
+  onOpenSyncQueue,
+  onOpenDemo,
+  isSyncing = false,
+  syncSuccessMessage = null
+}) => {
+  const isTa = language === 'ta';
+  const isHi = language === 'hi';
+
+  // Specific prompt messages:
+  // Offline: "You're offline. Your work is safely saved on this device."
+  // Pending: "3 changes waiting to sync"
+  // Synced: "All changes synced successfully."
+  const offlineNotice = isTa
+    ? 'நீங்கள் ஆஃப்லைனில் உள்ளீர்கள். உங்கள் பணி இந்த சாதனத்தில் பாதுகாப்பாக சேமிக்கப்பட்டுள்ளது.'
+    : isHi
+    ? 'आप ऑफ़लाइन हैं। आपका काम इस डिवाइस पर सुरक्षित रूप से सहेजा गया है।'
+    : "You're offline. Your work is safely saved on this device.";
+
+  const pendingNotice = (count: number) => {
+    if (isTa) return `${count} மாற்றங்கள் ஒத்திசைக்கக் காத்திருக்கின்றன`;
+    if (isHi) return `${count} बदलाव सिंक के लिए प्रतीक्षारत हैं`;
+    return `${count} ${count === 1 ? 'change' : 'changes'} waiting to sync`;
+  };
+
+  const syncingNotice = isTa
+    ? 'மேகக்கணியுடன் ஒத்திசைக்கிறது...'
+    : isHi
+    ? 'क्लाउड के साथ सिंक हो रहा है...'
+    : 'Syncing changes with cloud...';
+
+  const syncedNotice = isTa
+    ? 'அனைத்து மாற்றங்களும் வெற்றிகரமாக ஒத்திசைக்கப்பட்டன.'
+    : isHi
+    ? 'सभी बदलाव सफलतापूर्वक सिंक हो गए।'
+    : 'All changes synced successfully.';
+
+  return (
+    <aside
+      aria-label="Offline Sync Status"
+      className={`w-full border-b px-3 py-1.5 flex flex-wrap items-center justify-between text-xs z-40 transition-colors ${
+        !isOnline
+          ? 'bg-amber-500/15 border-amber-500/30 text-amber-950 dark:text-amber-100'
+          : isSyncing
+          ? 'bg-blue-500/15 border-blue-500/30 text-blue-950 dark:text-blue-100'
+          : pendingSyncCount > 0
+          ? 'bg-amber-500/10 border-amber-500/25 text-amber-900'
+          : 'bg-surface-container-low border-outline-variant/30 text-on-surface'
+      }`}
+    >
+      <div className="flex items-center gap-2 min-w-0 py-0.5">
+        <span
+          className={`w-2.5 h-2.5 rounded-full shrink-0 ${
+            !isOnline
+              ? 'bg-amber-600 ring-2 ring-amber-400/40'
+              : isSyncing
+              ? 'bg-blue-600 animate-ping'
+              : pendingSyncCount > 0
+              ? 'bg-amber-500 animate-pulse'
+              : 'bg-emerald-600 ring-2 ring-emerald-400/40'
+          }`}
+        />
+        <div className="flex items-center gap-1.5 truncate">
+          <span className="font-bold text-[11px] sm:text-xs">
+            {!isOnline
+              ? (isTa ? 'ஆஃப்லைன்' : isHi ? 'ऑफ़लाइन' : 'Offline')
+              : isSyncing
+              ? (isTa ? 'ஒத்திசைக்கிறது' : isHi ? 'सिंक हो रहा है' : 'Syncing')
+              : (isTa ? 'ஆன்லைன்' : isHi ? 'ऑनलाइन' : 'Online')}
+          </span>
+          <span className="text-outline-variant">·</span>
+          <span className="truncate text-[11px] font-medium">
+            {!isOnline
+              ? offlineNotice
+              : isSyncing
+              ? syncingNotice
+              : syncSuccessMessage
+              ? syncSuccessMessage
+              : pendingSyncCount > 0
+              ? pendingNotice(pendingSyncCount)
+              : syncedNotice}
+          </span>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-1.5 shrink-0 ml-auto py-0.5">
+        {/* Queue badge button if pending items exist */}
+        {onOpenSyncQueue && (
+          <button
+            type="button"
+            id="btn-open-sync-queue"
+            onClick={onOpenSyncQueue}
+            className={`px-2 py-0.5 rounded-full text-[10px] font-bold border transition-all flex items-center gap-1 cursor-pointer ${
+              pendingSyncCount > 0
+                ? 'bg-amber-600 text-white border-amber-700 hover:bg-amber-700 shadow-xs'
+                : 'bg-surface-container text-on-surface-variant border-outline-variant/30 hover:bg-surface-container-high'
+            }`}
+            title="Inspect Offline Sync Queue"
+          >
+            <span className="material-symbols-outlined text-[13px]">sync_alt</span>
+            <span>{pendingSyncCount > 0 ? `${pendingSyncCount} in queue` : 'Sync Queue'}</span>
+          </button>
+        )}
+
+        {/* Demo Mode Button */}
+        {onOpenDemo && (
+          <button
+            type="button"
+            id="btn-offline-demo-mode"
+            onClick={onOpenDemo}
+            className="px-2 py-0.5 rounded-full text-[10px] font-bold border bg-secondary/10 border-secondary/30 text-secondary hover:bg-secondary/20 transition-all flex items-center gap-1 cursor-pointer"
+            title="Interactive Offline-to-Online Walkthrough"
+          >
+            <span className="material-symbols-outlined text-[13px]">play_circle</span>
+            <span>Demo Mode</span>
+          </button>
+        )}
+
+        {/* Network Toggle Button */}
+        <button
+          type="button"
+          id="btn-toggle-offline"
+          onClick={onToggleOnline}
+          className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border transition-all cursor-pointer ${
+            isOnline
+              ? 'bg-surface-container-lowest text-on-surface-variant border-outline-variant/40 hover:bg-surface-container'
+              : 'bg-emerald-700 text-white border-emerald-800 hover:bg-emerald-800 shadow-xs'
+          }`}
+          title="Simulate network connectivity for hackathon demo"
+        >
+          {isOnline
+            ? isTa
+              ? 'ஆஃப்லைன் சோதனை'
+              : isHi
+              ? 'ऑफ़लाइन टेस्ट'
+              : 'Simulate Offline'
+            : isTa
+            ? 'இணைக்க'
+            : isHi
+            ? 'ऑनलाइन करें'
+            : 'Turn Online ON'}
+        </button>
+      </div>
+    </aside>
+  );
+};

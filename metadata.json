@@ -1,0 +1,6 @@
+{
+  "name": "KalaMart",
+  "description": "Connecting Traditional Craftsmanship with Modern Digital Commerce - Offline-first, voice-first digital marketplace for traditional artisans and conscious buyers.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
