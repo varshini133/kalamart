@@ -169,10 +169,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             </div>
             <div>
               <h2 className="font-display font-bold text-base sm:text-lg text-primary leading-tight">
-                Secure GI Checkout
+                {t.secureGiCheckout}
               </h2>
               <p className="text-[11px] text-on-surface-variant">
-                Direct artisan remittance & climate-neutral packaging
+                {t.checkoutSubtitle}
               </p>
             </div>
           </div>
@@ -204,16 +204,16 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               </div>
               <div>
                 <p className="font-bold text-primary text-xs">
-                  {totalItemsCount} {totalItemsCount === 1 ? 'item' : 'items'} in order
+                  {totalItemsCount} {t.itemsInOrder}
                 </p>
                 <p className="text-[10px] text-secondary font-semibold">
-                  87% (₹{artisanRoyalty.toLocaleString('en-IN')}) directly to artisan
+                  87% (₹{artisanRoyalty.toLocaleString('en-IN')}) {t.directlyToArtisan}
                 </p>
               </div>
             </div>
 
             <div className="text-right">
-              <span className="text-[10px] text-outline">Total Payable</span>
+              <span className="text-[10px] text-outline">{t.totalPayable}</span>
               <p className="font-display font-bold text-base text-primary">
                 ₹{totalAmount.toLocaleString('en-IN')}
               </p>
@@ -224,13 +224,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
           <div className="space-y-3">
             <div className="flex items-center gap-1.5 text-primary font-bold text-xs">
               <span className="material-symbols-outlined text-secondary text-[18px]">contact_mail</span>
-              <span>1. Contact Information</span>
+              <span>1. {t.contactInfo}</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="block text-[11px] font-bold text-on-surface-variant mb-1">
-                  Full Name <span className="text-red-500">*</span>
+                  {t.fullName} <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
@@ -244,7 +244,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
               <div>
                 <label className="block text-[11px] font-bold text-on-surface-variant mb-1">
-                  Phone / WhatsApp (for delivery updates) <span className="text-red-500">*</span>
+                  {t.phone} <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
@@ -258,7 +258,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
               <div className="sm:col-span-2">
                 <label className="block text-[11px] font-bold text-on-surface-variant mb-1">
-                  Email Address (for invoice & GI certificate)
+                  {t.email}
                 </label>
                 <input
                   type="email"
@@ -275,13 +275,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
           <div className="space-y-3">
             <div className="flex items-center gap-1.5 text-primary font-bold text-xs">
               <span className="material-symbols-outlined text-secondary text-[18px]">home_pin</span>
-              <span>2. Delivery Address</span>
+              <span>2. {t.deliveryAddress}</span>
             </div>
 
             <div className="space-y-2.5">
               <div>
                 <label className="block text-[11px] font-bold text-on-surface-variant mb-1">
-                  Flat, House No., Building, Street <span className="text-red-500">*</span>
+                  {t.streetAddress} <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
@@ -296,7 +296,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                 <div>
                   <label className="block text-[11px] font-bold text-on-surface-variant mb-1">
-                    Landmark
+                    {t.landmarkOptional}
                   </label>
                   <input
                     type="text"
@@ -309,7 +309,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
                 <div>
                   <label className="block text-[11px] font-bold text-on-surface-variant mb-1">
-                    City <span className="text-red-500">*</span>
+                    {t.city} <span className="text-red-500">*</span>
                   </label>
                   <input
                     required
@@ -323,7 +323,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
                 <div>
                   <label className="block text-[11px] font-bold text-on-surface-variant mb-1">
-                    Pincode <span className="text-red-500">*</span>
+                    {t.pincode} <span className="text-red-500">*</span>
                   </label>
                   <input
                     required
@@ -357,7 +357,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 text-primary font-bold text-xs">
                 <span className="material-symbols-outlined text-secondary text-[18px]">account_balance_wallet</span>
-                <span>3. Payment Architecture</span>
+                <span>3. {t.paymentArchitecture}</span>
               </div>
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-bold">
                 Modular Architecture
@@ -378,7 +378,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                         : 'text-on-surface hover:text-primary'
                     }`}
                   >
-                    Demo Simulation (Hackathon)
+                    {t.demoSimulation}
                   </button>
                   <button
                     type="button"
@@ -389,7 +389,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                         : 'text-on-surface hover:text-primary'
                     }`}
                   >
-                    Real Production Gateway
+                    {t.productionGateway}
                   </button>
                 </div>
               </div>
@@ -431,7 +431,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             {/* Payment Methods */}
             <div className="space-y-2">
               <label className="block text-[11px] font-bold text-on-surface-variant">
-                Select Payment Rail:
+                {t.selectPaymentRail}:
               </label>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -571,7 +571,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               ) : (
                 <>
                   <span className="material-symbols-outlined text-[18px]">verified_user</span>
-                  <span>Pay ₹{totalAmount.toLocaleString('en-IN')} & Place Order</span>
+                  <span>{t.payAndPlaceOrder} • ₹{totalAmount.toLocaleString('en-IN')}</span>
                 </>
               )}
             </button>

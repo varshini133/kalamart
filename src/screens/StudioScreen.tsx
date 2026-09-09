@@ -95,28 +95,20 @@ export const StudioScreen: React.FC<StudioScreenProps> = ({
   const getTimeGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) {
-      if (language === 'ta') return `காலை வணக்கம், ${realName}`;
-      if (language === 'hi') return `शुभ प्रभात, ${realName}`;
-      return `Good morning, ${realName}`;
+      return `${t.goodMorning}, ${realName}`;
     }
     if (hour < 17) {
-      if (language === 'ta') return `மதிய வணக்கம், ${realName}`;
-      if (language === 'hi') return `शुभ दोपहर, ${realName}`;
-      return `Good afternoon, ${realName}`;
+      return `${t.goodAfternoon}, ${realName}`;
     }
-    if (language === 'ta') return `மாலை வணக்கம், ${realName}`;
-    if (language === 'hi') return `शुभ संध्या, ${realName}`;
-    return `Good evening, ${realName}`;
+    return `${t.goodEvening}, ${realName}`;
   };
 
   const getEncouragingSubtitle = () => {
-    if (language === 'ta') return 'உங்கள் கைவினைப் பொருளை உலகத்துடன் பகிரத் தயாரா?';
-    if (language === 'hi') return 'क्या आप अपनी कला को दुनिया के साथ साझा करने के लिए तैयार हैं?';
-    return 'Ready to share your craft with the world?';
+    return t.studioEncouraging;
   };
 
   const displayAvatar = user?.avatar || RAMDEV_PORTRAIT;
-  const displayGuild = user?.guildName || (language === 'ta' ? 'பாரம்பரிய கைவினைஞர் சங்கம்' : language === 'hi' ? 'पारंपरिक शिल्पकार गिल्ड' : 'Terracotta Pottery Guild • Bhuj');
+  const displayGuild = user?.guildName || t.defaultGuildName;
 
   const publishedCount = myProductsList.filter((p) => p.syncStatus !== 'saved_local').length || 4;
   const draftsCount = Math.max(savedDrafts.length, 1);
@@ -126,13 +118,13 @@ export const StudioScreen: React.FC<StudioScreenProps> = ({
   const handleDeleteProduct = (productId: string, e: React.MouseEvent) => {
     e.stopPropagation();
     setMyProductsList((prev) => prev.filter((p) => p.id !== productId));
-    onShowToast(language === 'ta' ? 'பொருள் நீக்கப்பட்டது.' : language === 'hi' ? 'उत्पाद सूची से हटा दिया गया।' : 'Product removed from active listings.');
+    onShowToast(t.productRemovedToast);
   };
 
   const handleShareProduct = (product: Product, e: React.MouseEvent) => {
     e.stopPropagation();
     navigator.clipboard?.writeText?.(window.location.href);
-    onShowToast(language === 'ta' ? 'பொருளின் இணைப்பு நகலெடுக்கப்பட்டது!' : language === 'hi' ? 'उत्पाद लिंक कॉपी हो गया!' : 'Shop link copied! Share with your customers.');
+    onShowToast(t.shopLinkCopiedToast);
   };
 
   const handleStartCreateProduct = () => {

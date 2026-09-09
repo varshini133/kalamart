@@ -191,11 +191,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
               {t.welcomeHeroTitle}
             </h1>
             <p className="text-[11px] text-stone-200 mt-1 leading-snug line-clamp-2">
-              {language === 'ta'
-                ? 'பாரம்பரிய கைவினைஞர்களை நவீன டிஜிட்டல் வாங்குபவர்களுடன் குரல் வழியில் நேரடியாக இணைக்கும் தளம்.'
-                : language === 'hi'
-                ? 'आवाज-आधारित डिजिटल कैटलॉग से पारंपरिक कारीगरों को सीधे बाज़ार से जोड़ने वाला मंच।'
-                : 'Offline-first, voice-first digital marketplace empowering master artisans and connecting conscious buyers directly.'}
+              {t.welcomeHeroSubtitle}
             </p>
           </div>
         </div>
@@ -348,11 +344,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
               <span>B2B Wholesale</span>
             </div>
             <p className="text-[11px] text-on-surface-variant leading-snug">
-              {language === 'ta'
-                ? 'மொத்த ஆர்டர்கள் மற்றும் ஏற்றுமதி விலைப்புள்ளி'
-                : language === 'hi'
-                ? 'थोक ऑर्डर एवं न्यूनतम मात्रा (MOQ)'
-                : 'Bulk orders, RFQ quotations & MOQ'}
+              {t.b2bCardSubtitle}
             </p>
           </button>
 
@@ -367,11 +359,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
               <span>Admin Trust</span>
             </div>
             <p className="text-[11px] text-on-surface-variant leading-snug">
-              {language === 'ta'
-                ? 'தயாரிப்பு ஒப்புதல் மற்றும் கைவினைஞர் சரிபார்ப்பு'
-                : language === 'hi'
-                ? 'उत्पाद समीक्षा एवं जीआई प्रमाणन'
-                : 'Verify crafts, approve listings & badges'}
+              {t.adminCardSubtitle}
             </p>
           </button>
         </div>

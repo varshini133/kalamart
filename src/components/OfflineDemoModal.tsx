@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { offlineSyncService } from '../services/offlineSyncService';
 import { Language } from '../types';
+import { getTranslations } from '../services/localizationService';
 
 interface OfflineDemoModalProps {
   isOpen: boolean;
   onClose: () => void;
   language: Language;
   onShowToast: (msg: string) => void;
-  onViewProduct?: (productId: string) => void;
+  onViewProduct?: () => void | ((productId: string) => void);
 }
 
 export const OfflineDemoModal: React.FC<OfflineDemoModalProps> = ({
@@ -17,6 +18,7 @@ export const OfflineDemoModal: React.FC<OfflineDemoModalProps> = ({
   onShowToast,
   onViewProduct
 }) => {
+  const t = getTranslations(language);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [stepDetail, setStepDetail] = useState<string>('');
@@ -98,13 +100,13 @@ export const OfflineDemoModal: React.FC<OfflineDemoModalProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-bold text-sm text-primary">Offline-First Architecture Demo</h3>
+                <h3 className="font-bold text-sm text-primary">{t.offlineDemoTitle}</h3>
                 <span className="px-2 py-0.2 rounded-full bg-secondary/20 text-secondary text-[10px] font-extrabold uppercase">
                   Interactive
                 </span>
               </div>
               <p className="text-[11px] text-on-surface-variant">
-                Live simulation of rural offline listing & auto cloud synchronization
+                {t.offlineDemoSubtitle}
               </p>
             </div>
           </div>
@@ -209,7 +211,7 @@ export const OfflineDemoModal: React.FC<OfflineDemoModalProps> = ({
             <span className={`material-symbols-outlined text-[18px] ${isRunning ? 'animate-spin' : ''}`}>
               {isRunning ? 'sync' : 'play_arrow'}
             </span>
-            <span>{isRunning ? 'Running Live Demo...' : 'Run Full Guided Demo'}</span>
+            <span>{isRunning ? 'Running Live Demo...' : t.startInteractiveDemo}</span>
           </button>
 
           {currentStep === 6 && demoProdId && onViewProduct && (

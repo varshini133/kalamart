@@ -385,29 +385,29 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
   const ROLES_INFO = [
     {
       id: 'artisan' as UserRole,
-      title: language === 'ta' ? 'கைவினைஞர்' : language === 'hi' ? 'कारीगर' : 'Artisan',
-      subtitle: language === 'ta' ? 'பாரம்பரிய கைவினைத் திறனாளர்' : language === 'hi' ? 'पारंपरिक शिल्पकार' : 'Master Maker & Craftsman',
+      title: t.roleArtisan,
+      subtitle: t.roleArtisanDesc,
       icon: 'palette',
       badge: 'GI Master'
     },
     {
       id: 'buyer' as UserRole,
-      title: language === 'ta' ? 'வாங்குபவர்' : language === 'hi' ? 'खरीदार' : 'Buyer',
-      subtitle: language === 'ta' ? 'கலை ஆர்வலர் & சேகரிப்பாளர்' : language === 'hi' ? 'कला संरक्षक व उपभोक्ता' : 'Art Patron & Conscious Shopper',
+      title: t.roleBuyer,
+      subtitle: t.roleBuyerDesc,
       icon: 'shopping_bag',
       badge: 'Direct Provenance'
     },
     {
       id: 'b2b' as UserRole,
-      title: 'B2B Buyer',
-      subtitle: language === 'ta' ? 'மொத்த வர்த்தகம் & கார்ப்பரேட்' : language === 'hi' ? 'थोक व कॉर्पोरेट ऑर्डर' : 'Bulk Wholesale & Retailers',
+      title: t.roleB2B,
+      subtitle: t.roleB2BDesc,
       icon: 'corporate_fare',
       badge: 'MOQ Pricing'
     },
     {
       id: 'admin' as UserRole,
-      title: 'Admin',
-      subtitle: language === 'ta' ? 'சரிபார்ப்பு & தணிக்கை' : language === 'hi' ? 'प्रमाणीकरण व ट्रस्ट' : 'Trust, GI & Verification',
+      title: t.roleAdmin,
+      subtitle: t.roleAdminDesc,
       icon: 'admin_panel_settings',
       badge: 'Governance'
     }

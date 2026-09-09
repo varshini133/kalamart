@@ -1,5 +1,6 @@
 import React from 'react';
 import { Language, SyncStatus } from '../types';
+import { getTranslations } from '../services/localizationService';
 
 interface OfflineStatusBarProps {
   isOnline: boolean;
@@ -24,18 +25,11 @@ export const OfflineStatusBar: React.FC<OfflineStatusBarProps> = ({
   isSyncing = false,
   syncSuccessMessage = null
 }) => {
+  const t = getTranslations(language);
   const isTa = language === 'ta';
   const isHi = language === 'hi';
 
-  // Specific prompt messages:
-  // Offline: "You're offline. Your work is safely saved on this device."
-  // Pending: "3 changes waiting to sync"
-  // Synced: "All changes synced successfully."
-  const offlineNotice = isTa
-    ? 'நீங்கள் ஆஃப்லைனில் உள்ளீர்கள். உங்கள் பணி இந்த சாதனத்தில் பாதுகாப்பாக சேமிக்கப்பட்டுள்ளது.'
-    : isHi
-    ? 'आप ऑफ़लाइन हैं। आपका काम इस डिवाइस पर सुरक्षित रूप से सहेजा गया है।'
-    : "You're offline. Your work is safely saved on this device.";
+  const offlineNotice = t.offlineNotice;
 
   const pendingNotice = (count: number) => {
     if (isTa) return `${count} மாற்றங்கள் ஒத்திசைக்கக் காத்திருக்கின்றன`;
@@ -43,17 +37,8 @@ export const OfflineStatusBar: React.FC<OfflineStatusBarProps> = ({
     return `${count} ${count === 1 ? 'change' : 'changes'} waiting to sync`;
   };
 
-  const syncingNotice = isTa
-    ? 'மேகக்கணியுடன் ஒத்திசைக்கிறது...'
-    : isHi
-    ? 'क्लाउड के साथ सिंक हो रहा है...'
-    : 'Syncing changes with cloud...';
-
-  const syncedNotice = isTa
-    ? 'அனைத்து மாற்றங்களும் வெற்றிகரமாக ஒத்திசைக்கப்பட்டன.'
-    : isHi
-    ? 'सभी बदलाव सफलतापूर्वक सिंक हो गए।'
-    : 'All changes synced successfully.';
+  const syncingNotice = t.syncingNotice;
+  const syncedNotice = t.syncedNotice;
 
   return (
     <aside
@@ -83,10 +68,10 @@ export const OfflineStatusBar: React.FC<OfflineStatusBarProps> = ({
         <div className="flex items-center gap-1.5 truncate">
           <span className="font-bold text-[11px] sm:text-xs">
             {!isOnline
-              ? (isTa ? 'ஆஃப்லைன்' : isHi ? 'ऑफ़लाइन' : 'Offline')
+              ? t.offlineLabel
               : isSyncing
-              ? (isTa ? 'ஒத்திசைக்கிறது' : isHi ? 'सिंक हो रहा है' : 'Syncing')
-              : (isTa ? 'ஆன்லைன்' : isHi ? 'ऑनलाइन' : 'Online')}
+              ? t.syncingLabel
+              : t.onlineLabel}
           </span>
           <span className="text-outline-variant">·</span>
           <span className="truncate text-[11px] font-medium">
@@ -118,7 +103,7 @@ export const OfflineStatusBar: React.FC<OfflineStatusBarProps> = ({
             title="Inspect Offline Sync Queue"
           >
             <span className="material-symbols-outlined text-[13px]">sync_alt</span>
-            <span>{pendingSyncCount > 0 ? `${pendingSyncCount} in queue` : 'Sync Queue'}</span>
+            <span>{pendingSyncCount > 0 ? `${pendingSyncCount} ${t.inQueue}` : t.syncQueue}</span>
           </button>
         )}
 
@@ -132,7 +117,7 @@ export const OfflineStatusBar: React.FC<OfflineStatusBarProps> = ({
             title="Interactive Offline-to-Online Walkthrough"
           >
             <span className="material-symbols-outlined text-[13px]">play_circle</span>
-            <span>Demo Mode</span>
+            <span>{t.demoMode}</span>
           </button>
         )}
 
@@ -148,17 +133,7 @@ export const OfflineStatusBar: React.FC<OfflineStatusBarProps> = ({
           }`}
           title="Simulate network connectivity for hackathon demo"
         >
-          {isOnline
-            ? isTa
-              ? 'ஆஃப்லைன் சோதனை'
-              : isHi
-              ? 'ऑफ़लाइन टेस्ट'
-              : 'Simulate Offline'
-            : isTa
-            ? 'இணைக்க'
-            : isHi
-            ? 'ऑनलाइन करें'
-            : 'Turn Online ON'}
+          {isOnline ? t.simulateOffline : t.turnOnlineOn}
         </button>
       </div>
     </aside>

@@ -82,12 +82,12 @@ export const OrdersScreen: React.FC<OrdersScreenProps> = ({
   // Artisan Actions for Orders
   const handleAcceptOrder = (orderId: string) => {
     orderService.updateOrderStatus(orderId, 'Confirmed');
-    onShowToast(language === 'ta' ? 'ஆர்டர் உறுதிப்படுத்தப்பட்டது!' : language === 'hi' ? 'ऑर्डर की पुष्टि हो गई!' : 'Order confirmed! Scheduled for production.');
+    onShowToast(t.orderConfirmedToast);
   };
 
   const handleRejectOrder = (orderId: string) => {
     orderService.updateOrderStatus(orderId, 'Cancelled');
-    onShowToast(language === 'ta' ? 'ஆர்டர் நிராகரிக்கப்பட்டது' : language === 'hi' ? 'ऑर्डर अस्वीकृत किया गया' : 'Order declined and refunded to customer.');
+    onShowToast(t.orderDeclinedToast);
   };
 
   const handleAdvanceStatus = (orderId: string) => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Language, ScreenType, UserRole } from '../types';
+import { getTranslations } from '../services/localizationService';
 
 interface BottomNavBarProps {
   currentScreen: ScreenType;
@@ -20,6 +21,8 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
   activeOrdersCount = 2,
   currentLanguage
 }) => {
+  const t = getTranslations(currentLanguage);
+
   // Hide on welcome screen or dedicated auth/onboarding screens
   if (
     currentScreen === 'welcome' ||
@@ -35,17 +38,21 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({
 
   // ARTISAN LABELS
   const artisanLabels = {
-    en: { home: 'Home', products: 'Products', create: 'Create Product', orders: 'Orders', profile: 'Profile' },
-    hi: { home: 'होम', products: 'उत्पाद', create: 'नया उत्पाद', orders: 'ऑर्डर', profile: 'प्रोफाइल' },
-    ta: { home: 'முகப்பு', products: 'பொருட்கள்', create: 'புதிய பொருள்', orders: 'ஆர்டர்கள்', profile: 'சுயவிவரம்' }
-  }[currentLanguage] || { home: 'Home', products: 'Products', create: 'Create Product', orders: 'Orders', profile: 'Profile' };
+    home: t.navHome,
+    products: t.navProducts,
+    create: t.navCreateProduct,
+    orders: t.navOrders,
+    profile: t.navProfile
+  };
 
   // BUYER LABELS
   const buyerLabels = {
-    en: { home: 'Home', explore: 'Explore', cart: 'Cart', orders: 'Orders', profile: 'Profile' },
-    hi: { home: 'होम', explore: 'खोजें', cart: 'कार्ट', orders: 'ऑर्डर', profile: 'प्रोफाइल' },
-    ta: { home: 'முகப்பு', explore: 'ஆராய்க', cart: 'கூடை', orders: 'ஆர்டர்கள்', profile: 'சுயவிவரம்' }
-  }[currentLanguage] || { home: 'Home', explore: 'Explore', cart: 'Cart', orders: 'Orders', profile: 'Profile' };
+    home: t.navHome,
+    explore: t.navExplore,
+    cart: t.navCart,
+    orders: t.navOrders,
+    profile: t.navProfile
+  };
 
   if (isArtisan) {
     return (

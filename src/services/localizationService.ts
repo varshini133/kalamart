@@ -449,6 +449,207 @@ export interface Translations {
   maxPrice: string;
   applyFilters: string;
   meetTheArtisan: string;
+
+  // Additional Screen & Navigation Titles
+  b2bPortal: string;
+  adminTrustPortal: string;
+  myProducts: string;
+  productManagement: string;
+  pitchDemo: string;
+  b2b: string;
+  notifications: string;
+  viewCart: string;
+  userProfile: string;
+  navHome: string;
+  navProducts: string;
+  navCreateProduct: string;
+  navExplore: string;
+
+  // Marketplace & Discover
+  directClusterSourced: string;
+  welcomeUser: string;
+  verifiedPatronBadge: string;
+  curatedSelectionTag: string;
+  authenticCraftsCatalog: string;
+  craftsLabel: string;
+  featuredMasterpieces: string;
+  readyToShip: string;
+  readyToDispatch: string;
+  giCertifiedBadge: string;
+  craftDisciplines: string;
+  exploreByCraftCategory: string;
+  viewAllBtn: string;
+  livingHeritageStories: string;
+  meetTheArtisansTitle: string;
+  meetTheArtisansSubtitle: string;
+  giCertifiedMaster: string;
+  featuredHandcrafts: string;
+  creationsLabel: string;
+  viewCrafts: string;
+  curatedMasterSeries: string;
+  authenticCraftCollections: string;
+  craftCollectionsSubtitle: string;
+  directArtisanBulkSourcing: string;
+  cooperativeDirect: string;
+  lookingToSourceInBulk: string;
+  bulkSourcingSubtitle: string;
+  wholesaleTiers: string;
+  wholesaleTiersSub: string;
+  giProvenance: string;
+  giProvenanceSub: string;
+  customBranding: string;
+  customBrandingSub: string;
+  bulkOrderAvailable: string;
+  wholesaleTierLabel: string;
+  savePercentage: string;
+  requestBulkQuote: string;
+  quoteBtn: string;
+  capacity: string;
+  leadTime: string;
+
+  // Hero Banner
+  heroProvenanceTag: string;
+  heroLivingHeritage: string;
+  heroDirectMasters: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  heroHandcrafted: string;
+  heroDirectRoyalties: string;
+  heroEcoPackaged: string;
+  heroExploreMasterpieces: string;
+  heroMeetArtisans: string;
+
+  // Search & Filters
+  searchMarketplacePlaceholder: string;
+  voiceSearch: string;
+  filterOptions: string;
+  filtersCleared: string;
+  voiceSearchListening: string;
+
+  // Offline & Status
+  offlineLabel: string;
+  syncingLabel: string;
+  onlineLabel: string;
+  offlineNotice: string;
+  syncingNotice: string;
+  syncedNotice: string;
+  syncQueue: string;
+  demoMode: string;
+  simulateOffline: string;
+  turnOnlineOn: string;
+  savedLocally: string;
+  waitingToSync: string;
+  syncFailed: string;
+  inQueue: string;
+
+  // Product Details & Trust
+  whyTrustTitle: string;
+  whyTrustSubtitle: string;
+  viewAudit: string;
+  verified: string;
+  inReview: string;
+  trustProgramTitle: string;
+  trustProgramDesc: string;
+  authenticityAuditLog: string;
+  artisanVerificationLevel: string;
+  closeAudit: string;
+  buyerPreviewMode: string;
+  backToMyProducts: string;
+  cleaningTab: string;
+  seasoningTab: string;
+  storageTab: string;
+  aboutCreation: string;
+  sendInquiryTo: string;
+  masterCraftDetails: string;
+  materialsLabel: string;
+  craftTechniqueLabel: string;
+  productionTimeLabel: string;
+  dimensionsLabel: string;
+  careInstructionsLabel: string;
+  livingHeritage: string;
+  aboutCraft: string;
+  viewArtisanProfile: string;
+  requestQuoteBulk: string;
+  b2bWholesaleTitle: string;
+  bulkAvailable: string;
+  b2bWholesaleDesc: string;
+  orderAvailability: string;
+  moqLabel: string;
+  productionCapacity: string;
+  approxLeadTime: string;
+  tieredWholesalePrice: string;
+  cleaningCareTip: string;
+  seasoningCareTip: string;
+  storageCareTip: string;
+
+  // Checkout & Forms
+  contactInfo: string;
+  deliveryAddress: string;
+  streetAddress: string;
+  landmarkOptional: string;
+  city: string;
+  state: string;
+  pincode: string;
+  paymentMethodLabel: string;
+  itemsInOrder: string;
+  directlyToArtisan: string;
+  payNow: string;
+  secureGiCheckout: string;
+  checkoutSubtitle: string;
+  paymentArchitecture: string;
+  demoSimulation: string;
+  productionGateway: string;
+  selectPaymentRail: string;
+  payAndPlaceOrder: string;
+
+  // Offline Sync & Demo
+  offlineSyncQueue: string;
+  syncNow: string;
+  retryFailed: string;
+  clearSynced: string;
+  runDemoMode: string;
+  allChangesSynced: string;
+  offlineNoticeDetail: string;
+  offlineDemoTitle: string;
+  offlineDemoSubtitle: string;
+  startInteractiveDemo: string;
+
+  // Greetings & Studio
+  goodMorning: string;
+  goodAfternoon: string;
+  goodEvening: string;
+  studioEncouraging: string;
+  defaultGuildName: string;
+  productRemovedToast: string;
+  shopLinkCopiedToast: string;
+
+  // Artisan Profile & Story
+  artisanStory: string;
+  bulkAndCustom: string;
+  masterBiography: string;
+  honoursAndAwards: string;
+  bulkSourcingTitle: string;
+  directFromCluster: string;
+  addedToBagToast: string;
+
+  // Welcome Screen
+  welcomeHeroSubtitle: string;
+  b2bCardSubtitle: string;
+  adminCardSubtitle: string;
+
+  // Auth Screen Roles
+  roleArtisan: string;
+  roleArtisanDesc: string;
+  roleBuyer: string;
+  roleBuyerDesc: string;
+  roleB2B: string;
+  roleB2BDesc: string;
+  roleAdmin: string;
+  roleAdminDesc: string;
+
+  // Order Actions Toasts
+  orderConfirmedToast: string;
+  orderDeclinedToast: string;
 }
 
 export const TRANSLATIONS: Record<Language, Translations> = {
@@ -880,7 +1081,208 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     filterByRegion: 'Filter by Cultural Region',
     maxPrice: 'Maximum Budget Price',
     applyFilters: 'Apply Selection',
-    meetTheArtisan: 'Meet the Master Maker'
+    meetTheArtisan: 'Meet the Master Maker',
+
+    // Additional Screen & Navigation Titles
+    b2bPortal: 'B2B Wholesale Hub',
+    adminTrustPortal: 'Admin Trust Portal',
+    myProducts: 'My Products',
+    productManagement: 'Product Management',
+    pitchDemo: 'Pitch Demo',
+    b2b: 'B2B',
+    notifications: 'Notifications',
+    viewCart: 'View Cart',
+    userProfile: 'User Profile',
+    navHome: 'Home',
+    navProducts: 'Products',
+    navCreateProduct: 'Create Product',
+    navExplore: 'Explore',
+
+    // Marketplace & Discover
+    directClusterSourced: 'Direct Cluster Sourced',
+    welcomeUser: 'Welcome',
+    verifiedPatronBadge: 'Verified Patron',
+    curatedSelectionTag: 'Curated Selection',
+    authenticCraftsCatalog: 'Authentic Crafts Catalog',
+    craftsLabel: 'crafts',
+    featuredMasterpieces: 'Featured Masterpieces',
+    readyToShip: 'Ready to Ship',
+    readyToDispatch: 'Ready to dispatch',
+    giCertifiedBadge: 'GI Certified',
+    craftDisciplines: 'Craft Disciplines',
+    exploreByCraftCategory: 'Explore by Craft Category',
+    viewAllBtn: 'View All',
+    livingHeritageStories: 'Living Heritage Stories',
+    meetTheArtisansTitle: 'Meet the Artisans',
+    meetTheArtisansSubtitle: 'Behind every craft is a master artisan preserving centuries of cultural memory',
+    giCertifiedMaster: 'GI Certified Master',
+    featuredHandcrafts: 'Featured Handcrafts',
+    creationsLabel: 'items',
+    viewCrafts: 'View Crafts',
+    curatedMasterSeries: 'Curated Master Series',
+    authenticCraftCollections: 'Authentic Craft Collections',
+    craftCollectionsSubtitle: 'Thematic heritage series hand-curated from registered geographical clusters',
+    directArtisanBulkSourcing: 'Direct Artisan Bulk Sourcing',
+    cooperativeDirect: 'Cooperative Direct',
+    lookingToSourceInBulk: 'Looking to source in bulk?',
+    bulkSourcingSubtitle: 'Direct institutional sourcing for boutique hospitality, corporate gifting, interior architects, and ethical retail straight from certified artisan clusters. Zero intermediaries with full provenance paperwork.',
+    wholesaleTiers: 'Wholesale Tiers',
+    wholesaleTiersSub: '20-35% below retail direct rates',
+    giProvenance: 'GI Provenance',
+    giProvenanceSub: 'Batch certification & artisan sign-off',
+    customBranding: 'Custom Branding',
+    customBrandingSub: 'Artisan story cards & eco gift boxes',
+    bulkOrderAvailable: 'Bulk Order Available',
+    wholesaleTierLabel: 'Wholesale Tier',
+    savePercentage: 'Save',
+    requestBulkQuote: 'Request Bulk Quote',
+    quoteBtn: 'Quote',
+    capacity: 'Cap:',
+    leadTime: 'Lead:',
+
+    // Hero Banner
+    heroProvenanceTag: '100% Certified GI Provenance',
+    heroLivingHeritage: 'Living Heritage',
+    heroDirectMasters: 'Direct From Living Masters',
+    heroTitle: 'Authentic Handmade Craftsmanship',
+    heroSubtitle: 'Every single piece carries centuries of sacred craft tradition, shaped with mindful devotion by verified master artisans with zero middlemen.',
+    heroHandcrafted: '100% Handcrafted',
+    heroDirectRoyalties: 'Direct Artisan Royalties',
+    heroEcoPackaged: 'Eco-Packaged',
+    heroExploreMasterpieces: 'Explore Masterpieces',
+    heroMeetArtisans: 'Meet Artisans',
+
+    // Search & Filters
+    searchMarketplacePlaceholder: 'Search by product, craft, artisan, or region...',
+    voiceSearch: 'Voice Search',
+    filterOptions: 'Filters',
+    filtersCleared: 'Filters cleared',
+    voiceSearchListening: 'Voice listening...',
+
+    // Offline & Status
+    offlineLabel: 'Offline',
+    syncingLabel: 'Syncing',
+    onlineLabel: 'Online',
+    offlineNotice: "You're offline. Your work is safely saved on this device.",
+    syncingNotice: 'Syncing changes with cloud...',
+    syncedNotice: 'All changes synced successfully.',
+    syncQueue: 'Sync Queue',
+    demoMode: 'Demo Mode',
+    simulateOffline: 'Simulate Offline',
+    turnOnlineOn: 'Turn Online ON',
+    savedLocally: 'Saved locally',
+    waitingToSync: 'Waiting to sync',
+    syncFailed: 'Sync failed',
+    inQueue: 'in queue',
+
+    // Product Details & Trust
+    whyTrustTitle: 'Why trust this product?',
+    whyTrustSubtitle: 'Transparent provenance, artisan verification, and curated craft audit',
+    viewAudit: 'View Audit',
+    verified: 'Verified',
+    inReview: 'In Review',
+    trustProgramTitle: 'Official Craft Verification Program (Integration Ready)',
+    trustProgramDesc: 'KalaConnect is architected for prospective integration with recognized regional and national craft registries. We verify individual artisan declarations, cluster records, and workshop proofs without making false claims.',
+    authenticityAuditLog: 'Authenticity Audit Log',
+    artisanVerificationLevel: 'Artisan Verification Level',
+    closeAudit: 'Close Audit View',
+    buyerPreviewMode: 'Buyer Preview Mode',
+    backToMyProducts: 'Back to My Products',
+    cleaningTab: 'Cleaning & Wash',
+    seasoningTab: 'Seasoning / Prep',
+    storageTab: 'Longevity & Storage',
+    aboutCreation: 'About This Creation',
+    sendInquiryTo: 'Send Inquiry to Artisan',
+    masterCraftDetails: 'Master Craft Details',
+    materialsLabel: 'Materials',
+    craftTechniqueLabel: 'Craft Technique',
+    productionTimeLabel: 'Production Time',
+    dimensionsLabel: 'Dimensions',
+    careInstructionsLabel: 'Care & Longevity Instructions',
+    livingHeritage: 'Living Heritage & Cultural Lineage',
+    aboutCraft: 'About the Craft',
+    viewArtisanProfile: 'View Artisan Profile',
+    requestQuoteBulk: 'Request a Quote (Bulk RFQ)',
+    b2bWholesaleTitle: 'B2B Wholesale & Bulk Sourcing',
+    bulkAvailable: 'Bulk Available',
+    b2bWholesaleDesc: 'Direct procurement for hotels, corporate gifting, retailers & export buyers',
+    orderAvailability: 'Order Availability',
+    moqLabel: 'Minimum Order (MOQ)',
+    productionCapacity: 'Production Capacity',
+    approxLeadTime: 'Approx. Lead Time',
+    tieredWholesalePrice: 'Tiered Wholesale Price',
+    cleaningCareTip: 'Gently rinse with lukewarm water and a natural coir or soft sponge. Never use synthetic detergents or harsh chemicals.',
+    seasoningCareTip: 'Before first use, soak completely in fresh clean water for 8 hours, then rub with a few drops of pure oil and air dry.',
+    storageCareTip: 'Store in a well-ventilated, dry shelf away from humid direct steam. Avoid stacking heavy metal items.',
+
+    // Checkout & Forms
+    contactInfo: 'Contact Information',
+    deliveryAddress: 'Delivery Address',
+    streetAddress: 'Street Address, House/Flat No.',
+    landmarkOptional: 'Landmark (Optional)',
+    city: 'City / Town',
+    state: 'State',
+    pincode: 'Pincode (6 digits)',
+    paymentMethodLabel: 'Payment Method',
+    itemsInOrder: 'items in order',
+    directlyToArtisan: 'directly to artisan',
+    payNow: 'Pay & Place Order',
+    secureGiCheckout: 'Secure GI Checkout',
+    checkoutSubtitle: 'Direct artisan remittance & climate-neutral packaging',
+    paymentArchitecture: 'Payment Architecture',
+    demoSimulation: 'Demo Simulation (Hackathon)',
+    productionGateway: 'Real Production Gateway',
+    selectPaymentRail: 'Select Payment Rail',
+    payAndPlaceOrder: 'Pay & Place Order',
+
+    // Offline Sync & Demo
+    offlineSyncQueue: 'Offline Sync Queue',
+    syncNow: 'Sync Now',
+    retryFailed: 'Retry Failed',
+    clearSynced: 'Clear Synced',
+    runDemoMode: 'Run Demo Mode',
+    allChangesSynced: 'All changes synced successfully.',
+    offlineNoticeDetail: "You're offline. Your work is safely saved on this device.",
+    offlineDemoTitle: 'Offline-First Synchronization Demo',
+    offlineDemoSubtitle: 'End-to-End Resilience Verification for Rural Artisan Clusters',
+    startInteractiveDemo: 'Start Interactive Simulation',
+
+    // Greetings & Studio
+    goodMorning: 'Good morning',
+    goodAfternoon: 'Good afternoon',
+    goodEvening: 'Good evening',
+    studioEncouraging: 'Ready to share your craft with the world?',
+    defaultGuildName: 'Terracotta Pottery Guild • Bhuj',
+    productRemovedToast: 'Product removed from active listings.',
+    shopLinkCopiedToast: 'Shop link copied! Share with your customers.',
+
+    // Artisan Profile & Story
+    artisanStory: 'Artisan Story',
+    bulkAndCustom: 'Bulk & Custom',
+    masterBiography: 'Master Biography',
+    honoursAndAwards: 'Honours & Certifications',
+    bulkSourcingTitle: 'Bulk & Institutional Sourcing',
+    directFromCluster: 'Direct from master cluster workshop',
+    addedToBagToast: 'Added to bag',
+
+    // Welcome Screen
+    welcomeHeroSubtitle: 'Offline-first, voice-first digital marketplace empowering master artisans and connecting conscious buyers directly.',
+    b2bCardSubtitle: 'Bulk orders, RFQ quotations & MOQ',
+    adminCardSubtitle: 'Verify crafts, approve listings & badges',
+
+    // Auth Screen Roles
+    roleArtisan: 'Artisan',
+    roleArtisanDesc: 'Master Maker & Craftsman',
+    roleBuyer: 'Buyer',
+    roleBuyerDesc: 'Art Patron & Conscious Shopper',
+    roleB2B: 'B2B Buyer',
+    roleB2BDesc: 'Bulk Wholesale & Retailers',
+    roleAdmin: 'Admin',
+    roleAdminDesc: 'Trust, GI & Verification',
+
+    // Order Actions Toasts
+    orderConfirmedToast: 'Order confirmed! Scheduled for production.',
+    orderDeclinedToast: 'Order declined and refunded to customer.'
   },
 
   // ==========================================
@@ -1311,7 +1713,208 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     filterByRegion: 'மண்டலம் வாரியாக வடிகட்டு',
     maxPrice: 'அதிகபட்ச விலை வரம்பு',
     applyFilters: 'தேர்வை உறுதிசெய்',
-    meetTheArtisan: 'தலைமை கைவினைஞரை சந்திக்கவும்'
+    meetTheArtisan: 'தலைமை கைவினைஞரை சந்திக்கவும்',
+
+    // Additional Screen & Navigation Titles
+    b2bPortal: 'மொத்த வர்த்தக மையம்',
+    adminTrustPortal: 'சரிபார்ப்பு & நம்பிக்கை மையம்',
+    myProducts: 'என் கைவினைப் பொருட்கள்',
+    productManagement: 'பொருள் மேலாண்மை',
+    pitchDemo: 'செயல்முறை வழிகாட்டி',
+    b2b: 'மொத்த வணிகம்',
+    notifications: 'அறிவிப்புகள்',
+    viewCart: 'கூடை',
+    userProfile: 'சுயவிவரம்',
+    navHome: 'முகப்பு',
+    navProducts: 'பொருட்கள்',
+    navCreateProduct: 'புதிய பொருள்',
+    navExplore: 'ஆராய்க',
+
+    // Marketplace & Discover
+    directClusterSourced: 'நேரடி புவிசார் சரக்கு',
+    welcomeUser: 'வணக்கம்',
+    verifiedPatronBadge: 'சரிபார்க்கப்பட்ட வாங்குபவர்',
+    curatedSelectionTag: 'தேர்ந்தெடுக்கப்பட்டவை',
+    authenticCraftsCatalog: 'கைவினைப் படைப்புகள்',
+    craftsLabel: 'பொருட்கள்',
+    featuredMasterpieces: 'சிறப்பானவை',
+    readyToShip: 'உடனடி அனுப்பல்',
+    readyToDispatch: 'அனுப்பத் தயார்',
+    giCertifiedBadge: 'புவிசார் சான்றிதழ்',
+    craftDisciplines: 'பாரம்பரிய துறைகள்',
+    exploreByCraftCategory: 'கைவினைப் பிரிவுகள்',
+    viewAllBtn: 'அனைத்தும் காண்க',
+    livingHeritageStories: 'வாழும் பாரம்பரியங்கள்',
+    meetTheArtisansTitle: 'தலைசிறந்த கைவினைஞர்கள்',
+    meetTheArtisansSubtitle: 'ஒவ்வொரு படைப்பிற்கும் பின்னால் ஒரு கைவினைஞரின் வாழ்நாள் அர்ப்பணிப்பு',
+    giCertifiedMaster: 'புவிசார் சான்றளிக்கப்பட்ட கலைஞர்',
+    featuredHandcrafts: 'கைவினைத் தயாரிப்புகள்',
+    creationsLabel: 'படைப்புகள்',
+    viewCrafts: 'படைப்புகள்',
+    curatedMasterSeries: 'சிறப்புக் களஞ்சியம்',
+    authenticCraftCollections: 'பாரம்பரிய கைவினைத் தொகுப்புகள்',
+    craftCollectionsSubtitle: 'வரலாற்றுப் பின்னணியும் புவிசார் அங்கீகாரமும் கொண்ட பிரத்யேகத் தொகுப்புகள்',
+    directArtisanBulkSourcing: 'மொத்த வணிகச் சந்தை (B2B)',
+    cooperativeDirect: 'அங்கீகரிக்கப்பட்ட கூட்டுறவு',
+    lookingToSourceInBulk: 'மொத்தமாக வாங்க விரும்புகிறீர்களா?',
+    bulkSourcingSubtitle: 'ஹோட்டல்கள், கார்ப்பரேட் பரிசுகள் மற்றும் உள்துறை வடிவமைப்பாளர்களுக்காக நேரடியாக கைவினைஞர்களிடமிருந்து மொத்த கொள்முதல்.',
+    wholesaleTiers: 'நேரடி மொத்த விலை',
+    wholesaleTiersSub: '20-35% சில்லறை விலையை விடக் குறைவு',
+    giProvenance: 'புவிசார் சான்றிதழ்',
+    giProvenanceSub: 'அங்கீகரிக்கப்பட்ட கைவினைச் சான்றிதழ்',
+    customBranding: 'பிரத்யேக பேக்கிங்',
+    customBrandingSub: 'கார்ப்பரேட் கதை அட்டை மற்றும் பேக்கிங்',
+    bulkOrderAvailable: 'மொத்த ஆர்டர் கிடைக்கும்',
+    wholesaleTierLabel: 'மொத்த விற்பனை அடுக்கு',
+    savePercentage: 'சேமிப்பு',
+    requestBulkQuote: 'மொத்த விலை கேட்க',
+    quoteBtn: 'விலைக் குறிப்பு',
+    capacity: 'அளவு:',
+    leadTime: 'நேரம்:',
+
+    // Hero Banner
+    heroProvenanceTag: 'நேரடி புவிசார் குறியீடு',
+    heroLivingHeritage: 'பாரம்பரிய கைவினை',
+    heroDirectMasters: 'நேரடி கைவினைஞர் சந்தை',
+    heroTitle: 'பாரம்பரியக் கலைகளின் தூய கைவண்ணம்',
+    heroSubtitle: 'தலைமுறை தலைமுறையாக போற்றி வளர்க்கப்படும் பாரம்பரிய கைவினைப் பொருட்கள். இடைத்தரகர்கள் இன்றி கைவினைஞர்களிடமிருந்து நேரடியாக.',
+    heroHandcrafted: '100% கைவினை',
+    heroDirectRoyalties: 'முழு ஊதியம்',
+    heroEcoPackaged: 'பிளாஸ்டிக் அற்றது',
+    heroExploreMasterpieces: 'சிறப்புப் படைப்புகள்',
+    heroMeetArtisans: 'கைவினைஞர்களைச் சந்திக்கவும்',
+
+    // Search & Filters
+    searchMarketplacePlaceholder: 'பொருள், கலை, கைவினைஞர், பகுதி தேடவும்...',
+    voiceSearch: 'குரல் தேடல்',
+    filterOptions: 'வடிப்பான்கள்',
+    filtersCleared: 'வடிப்பான்கள் நீக்கப்பட்டன',
+    voiceSearchListening: 'குரல் கேட்கிறது...',
+
+    // Offline & Status
+    offlineLabel: 'ஆஃப்லைன்',
+    syncingLabel: 'ஒத்திசைக்கிறது',
+    onlineLabel: 'ஆன்லைன்',
+    offlineNotice: 'நீங்கள் ஆஃப்லைனில் உள்ளீர்கள். உங்கள் பணி இந்த சாதனத்தில் பாதுகாப்பாக சேமிக்கப்பட்டுள்ளது.',
+    syncingNotice: 'மேகக்கணியுடன் ஒத்திசைக்கிறது...',
+    syncedNotice: 'அனைத்து மாற்றங்களும் வெற்றிகரமாக ஒத்திசைக்கப்பட்டன.',
+    syncQueue: 'ஒத்திசைவு வரிசை',
+    demoMode: 'மாதிரி முறை',
+    simulateOffline: 'ஆஃப்லைன் சோதனை',
+    turnOnlineOn: 'இணைக்க',
+    savedLocally: 'சாதனத்தில் சேமிக்கப்பட்டது',
+    waitingToSync: 'ஒத்திசைக்கக் காத்திருக்கிறது',
+    syncFailed: 'ஒத்திசைவு தோல்வி',
+    inQueue: 'வரிசையில்',
+
+    // Product Details & Trust
+    whyTrustTitle: 'இந்த தயாரிப்பை ஏன் நம்ப வேண்டும்?',
+    whyTrustSubtitle: 'சரிபார்க்கப்பட்ட கைவினைஞர் சான்றுகள் மற்றும் கைமுறை உற்பத்தி உத்தரவாதம்',
+    viewAudit: 'ஆய்வு விவரம்',
+    verified: 'சரிபார்க்கப்பட்டது',
+    inReview: 'மதிப்பாய்வில்',
+    trustProgramTitle: 'அதிகாரப்பூர்வ கைவினை சரிபார்ப்புத் திட்டம்',
+    trustProgramDesc: 'கைவினைஞர்களின் அறிவிப்புகள், பட்டறை சான்றுகள் மற்றும் புவிசார் தரவுகளை நேர்மையாக சரிபார்க்கிறோம்.',
+    authenticityAuditLog: 'நம்பகத்தன்மை ஆய்வுப் பதிவு',
+    artisanVerificationLevel: 'கைவினைஞர் சரிபார்ப்பு நிலை',
+    closeAudit: 'மூடுக',
+    buyerPreviewMode: 'வாங்குபவர் மாதிரிப் பார்வை',
+    backToMyProducts: 'என் தயாரிப்புகளுக்குத் திரும்பு',
+    cleaningTab: 'சுத்தம் செய்தல்',
+    seasoningTab: 'பக்குவப்படுத்துதல்',
+    storageTab: 'பாதுகாத்தல்',
+    aboutCreation: 'படைப்பு விளக்கம்',
+    sendInquiryTo: 'கைவினைஞரிடம் கேள்வி கேட்கவும்',
+    masterCraftDetails: 'கைவினை நுணுக்க விவரங்கள்',
+    materialsLabel: 'பொருட்கள்',
+    craftTechniqueLabel: 'கைவினை உத்தி',
+    productionTimeLabel: 'உற்பத்தி நேரம்',
+    dimensionsLabel: 'அளவுகள்',
+    careInstructionsLabel: 'பராமரிப்பு மற்றும் ஆயுள் வழிகாட்டுதல்',
+    livingHeritage: 'வரலாற்றுப் பாரம்பரியம்',
+    aboutCraft: 'இந்தக் கைவினையைப் பற்றி',
+    viewArtisanProfile: 'கைவினைஞர் விவரக்குறிப்பு',
+    requestQuoteBulk: 'மொத்த கொள்முதல் விலை கோரிக்கை',
+    b2bWholesaleTitle: 'மொத்த கொள்முதல் மற்றும் நிறுவன ஆதரவு',
+    bulkAvailable: 'மொத்தமாக கிடைக்கும்',
+    b2bWholesaleDesc: 'ஹோட்டல்கள், கார்ப்பரேட் பரிசுகள், சில்லறை விற்பனையாளர்களுக்கான நேரடி கொள்முதல்',
+    orderAvailability: 'ஆர்டர் கிடைக்கும் தன்மை',
+    moqLabel: 'குறைந்தபட்ச ஆர்டர் (MOQ)',
+    productionCapacity: 'உற்பத்தி திறன்',
+    approxLeadTime: 'தோராயமான தயாரிப்பு நேரம்',
+    tieredWholesalePrice: 'அடுக்கு மொத்த விலை',
+    cleaningCareTip: 'மிதமான வெதுவெதுப்பான நீரில் மென்மையான இயற்கை நார் கொண்டு மெதுவாக சுத்தம் செய்யவும். செயற்கை ரசாயனங்களைத் தவிர்க்கவும்.',
+    seasoningCareTip: 'முதல் முறை பயன்படுத்தும் முன், 8 மணி நேரம் சுத்தமான தண்ணீரில் ஊறவைத்து, பின் நல்லெண்ணெய் தடவி உலர்த்தவும்.',
+    storageCareTip: 'ஈரப்பதமில்லாத, நல்ல காற்றோட்டமுள்ள உலர்ந்த இடத்தில் வைக்கவும். கனமான உலோகப் பொருட்களை அடுக்க வேண்டாம்.',
+
+    // Checkout & Forms
+    contactInfo: 'தொடர்பு தகவல்',
+    deliveryAddress: 'டெலிவரி முகவரி',
+    streetAddress: 'தெரு முகவரி, வீடு/பிளாட் எண்',
+    landmarkOptional: 'அடையாளக் குறி (விருப்பமானது)',
+    city: 'நகரம் / ஊர்',
+    state: 'மாநிலம்',
+    pincode: 'அஞ்சல் குறியீடு (6 இலக்கங்கள்)',
+    paymentMethodLabel: 'பணம் செலுத்தும் முறை',
+    itemsInOrder: 'ஆர்டரில் உள்ள பொருட்கள்',
+    directlyToArtisan: 'நேரடியாக கைவினைஞருக்கு',
+    payNow: 'பணம் செலுத்தி ஆர்டர் செய்க',
+    secureGiCheckout: 'பாதுகாப்பான ஜிஐ பணம் செலுத்துதல்',
+    checkoutSubtitle: 'நேரடி கைவினைஞர் நிதி & சூழல் பாதுகாப்பு பொதி',
+    paymentArchitecture: 'பணப்பரிவர்த்தனை அமைப்பு',
+    demoSimulation: 'டெமோ உருவகப்படுத்துதல்',
+    productionGateway: 'உண்மையான உற்பத்தி நுழைவாயில்',
+    selectPaymentRail: 'கட்டண முறையைத் தேர்ந்தெடுக்கவும்',
+    payAndPlaceOrder: 'பணம் செலுத்தி ஆர்டர் செய்க',
+
+    // Offline Sync & Demo
+    offlineSyncQueue: 'ஆஃப்லைன் ஒத்திசைவு வரிசை',
+    syncNow: 'இப்போது ஒத்திசைக்க',
+    retryFailed: 'தோல்வியுற்றதை மீண்டும் முயற்சிக்கவும்',
+    clearSynced: 'ஒத்திசைக்கப்பட்டதை அழிக்கவும்',
+    runDemoMode: 'டெமோ பயன்முறையை இயக்கவும்',
+    allChangesSynced: 'அனைத்து மாற்றங்களும் வெற்றிகரமாக ஒத்திசைக்கப்பட்டன.',
+    offlineNoticeDetail: 'நீங்கள் ஆஃப்லைனில் உள்ளீர்கள். உங்கள் வேலை இந்த சாதனத்தில் பாதுகாப்பாக சேமிக்கப்பட்டுள்ளது.',
+    offlineDemoTitle: 'ஆஃப்லைன் ஒத்திசைவு நேரடி மாதிரி',
+    offlineDemoSubtitle: 'கிராமப்புற கைவினைஞர்களுக்கான நேரடி முழுமையான செயல்விளக்கம்',
+    startInteractiveDemo: 'ஊடாடும் உருவகப்படுத்துதலைத் தொடங்குக',
+
+    // Greetings & Studio
+    goodMorning: 'காலை வணக்கம்',
+    goodAfternoon: 'மதிய வணக்கம்',
+    goodEvening: 'மாலை வணக்கம்',
+    studioEncouraging: 'உங்கள் கைவினைப் பொருளை உலகத்துடன் பகிரத் தயாரா?',
+    defaultGuildName: 'பாரம்பரிய கைவினைஞர் சங்கம்',
+    productRemovedToast: 'பொருள் நீக்கப்பட்டது.',
+    shopLinkCopiedToast: 'பொருளின் இணைப்பு நகலெடுக்கப்பட்டது!',
+
+    // Artisan Profile & Story
+    artisanStory: 'கதை & பரம்பரை',
+    bulkAndCustom: 'மொத்த சப்ளை',
+    masterBiography: 'வாழ்க்கைக் குறிப்பு',
+    honoursAndAwards: 'விருதுகள் மற்றும் கௌரவங்கள்',
+    bulkSourcingTitle: 'நேரடி மொத்த ஆர்டர்கள்',
+    directFromCluster: 'கூட்டுறவு பட்டறையிலிருந்து நேரடியாக',
+    addedToBagToast: 'பையில் சேர்க்கப்பட்டது',
+
+    // Welcome Screen
+    welcomeHeroSubtitle: 'பாரம்பரிய கைவினைஞர்களை நவீன டிஜிட்டல் வாங்குபவர்களுடன் குரல் வழியில் நேரடியாக இணைக்கும் தளம்.',
+    b2bCardSubtitle: 'மொத்த ஆர்டர்கள் மற்றும் ஏற்றுமதி விலைப்புள்ளி',
+    adminCardSubtitle: 'தயாரிப்பு ஒப்புதல் மற்றும் கைவினைஞர் சரிபார்ப்பு',
+
+    // Auth Screen Roles
+    roleArtisan: 'கைவினைஞர்',
+    roleArtisanDesc: 'பாரம்பரிய கைவினைத் திறனாளர்',
+    roleBuyer: 'வாங்குபவர்',
+    roleBuyerDesc: 'கலை ஆர்வலர் & சேகரிப்பாளர்',
+    roleB2B: 'மொத்த வாங்குபவர்',
+    roleB2BDesc: 'மொத்த வர்த்தகம் & கார்ப்பரேட்',
+    roleAdmin: 'நிர்வாகி',
+    roleAdminDesc: 'சரிபார்ப்பு & தணிக்கை',
+
+    // Order Actions Toasts
+    orderConfirmedToast: 'ஆர்டர் உறுதிப்படுத்தப்பட்டது!',
+    orderDeclinedToast: 'ஆர்டர் நிராகரிக்கப்பட்டது'
   },
 
   // ==========================================
@@ -1742,7 +2345,208 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     filterByRegion: 'सांस्कृतिक क्षेत्र अनुसार चुनें',
     maxPrice: 'अधिकतम बजट मूल्य',
     applyFilters: 'चयन लागू करें',
-    meetTheArtisan: 'उस्ताद निर्माता से मिलें'
+    meetTheArtisan: 'उस्ताद निर्माता से मिलें',
+
+    // Additional Screen & Navigation Titles
+    b2bPortal: 'थोक एवं निर्यात केंद्र',
+    adminTrustPortal: 'सत्यापन एवं ट्रस्ट पोर्टल',
+    myProducts: 'मेरे उत्पाद',
+    productManagement: 'उत्पाद प्रबंधन',
+    pitchDemo: 'पिच डेमो',
+    b2b: 'थोक',
+    notifications: 'सूचनाएं',
+    viewCart: 'कार्ट देखें',
+    userProfile: 'उपयोगकर्ता प्रोफ़ाइल',
+    navHome: 'होम',
+    navProducts: 'उत्पाद',
+    navCreateProduct: 'नया उत्पाद',
+    navExplore: 'खोजें',
+
+    // Marketplace & Discover
+    directClusterSourced: 'सीधे क्लस्टर से',
+    welcomeUser: 'नमस्ते',
+    verifiedPatronBadge: 'सत्यापित खरीदार',
+    curatedSelectionTag: 'विशेष संग्रह',
+    authenticCraftsCatalog: 'प्रमाणित हस्तशिल्प',
+    craftsLabel: 'शिल्प',
+    featuredMasterpieces: 'फीचर्ड',
+    readyToShip: 'तुरंत उपलब्ध',
+    readyToDispatch: 'भेजने के लिए तैयार',
+    giCertifiedBadge: 'जीआई प्रमाणित',
+    craftDisciplines: 'प्रामाणिक श्रेणियां',
+    exploreByCraftCategory: 'प्रमुख शिल्प श्रेणियां',
+    viewAllBtn: 'सभी देखें',
+    livingHeritageStories: 'कारीगरों की कहानियां',
+    meetTheArtisansTitle: 'कारीगरों से मिलें',
+    meetTheArtisansSubtitle: 'हर उत्पाद के पीछे है एक गुरु की पीढ़ियों की साधना और कहानी',
+    giCertifiedMaster: 'जीआई प्रमाणित उस्ताद',
+    featuredHandcrafts: 'हस्तशिल्प संग्रह',
+    creationsLabel: 'कृतियां',
+    viewCrafts: 'शिल्प देखें',
+    curatedMasterSeries: 'विशेष संग्रह',
+    authenticCraftCollections: 'प्रामाणिक शिल्प संग्रह',
+    craftCollectionsSubtitle: 'हजारों साल की ऐतिहासिक निरंतरता और भौगोलिक संकेत से प्रमाणित विशेष कृतियां',
+    directArtisanBulkSourcing: 'थोक खरीद एवं संस्थागत ऑर्डर (B2B)',
+    cooperativeDirect: 'प्रमाणित सहकारी',
+    lookingToSourceInBulk: 'थोक या बड़े पैमाने पर सोर्सिंग की तलाश है?',
+    bulkSourcingSubtitle: 'बुटीक होटल, कॉर्पोरेट उपहार, इंटीरियर डिजाइन और निर्यात के लिए सीधे जीआई प्रमाणित कारीगर समूहों से थोक खरीद।',
+    wholesaleTiers: 'थोक कारीगर दर',
+    wholesaleTiersSub: '20-35% खुदरा से कम',
+    giProvenance: 'जीआई प्रामाणिकता',
+    giProvenanceSub: 'प्रत्येक बैच का आधिकारिक प्रमाण',
+    customBranding: 'कस्टम पैकेजिंग',
+    customBrandingSub: 'कारीगर कहानी कार्ड के साथ',
+    bulkOrderAvailable: 'थोक ऑर्डर उपलब्ध',
+    wholesaleTierLabel: 'थोक दर',
+    savePercentage: 'बचत',
+    requestBulkQuote: 'थोक दर पूछें',
+    quoteBtn: 'कोट',
+    capacity: 'क्षमता:',
+    leadTime: 'अवधि:',
+
+    // Hero Banner
+    heroProvenanceTag: 'प्रमाणित जीआई शिल्प',
+    heroLivingHeritage: 'जीवंत धरोहर',
+    heroDirectMasters: 'कारीगरों से सीधे आपके घर',
+    heroTitle: 'प्रामाणिक हस्तकला एवं पारंपरिक शिल्प',
+    heroSubtitle: 'हर शिल्प में बसी है सदियों की पवित्र परंपरा और पीढ़ियों की साधना। बिना किसी बिचौलिए के सीधे कारीगर परिवारों से।',
+    heroHandcrafted: '100% हस्तनिर्मित',
+    heroDirectRoyalties: 'सीधा पारिश्रमिक',
+    heroEcoPackaged: 'प्लास्टिक मुक्त पैकेजिंग',
+    heroExploreMasterpieces: 'मास्टरपीस देखें',
+    heroMeetArtisans: 'कारीगरों से मिलें',
+
+    // Search & Filters
+    searchMarketplacePlaceholder: 'उत्पाद, शिल्प, कारीगर या क्षेत्र खोजें...',
+    voiceSearch: 'आवाज से खोजें',
+    filterOptions: 'फ़िल्टर',
+    filtersCleared: 'फ़िल्टर साफ़ कर दिए गए',
+    voiceSearchListening: 'आवाज सुन रहे हैं...',
+
+    // Offline & Status
+    offlineLabel: 'ऑफ़लाइन',
+    syncingLabel: 'सिंक हो रहा है',
+    onlineLabel: 'ऑनलाइन',
+    offlineNotice: 'आप ऑफ़लाइन हैं। आपका काम इस डिवाइस पर सुरक्षित रूप से सहेजा गया है।',
+    syncingNotice: 'क्लाउड के साथ सिंक हो रहा है...',
+    syncedNotice: 'सभी बदलाव सफलतापूर्वक सिंक हो गए।',
+    syncQueue: 'सिंक कतार',
+    demoMode: 'डेमो मोड',
+    simulateOffline: 'ऑफ़लाइन टेस्ट',
+    turnOnlineOn: 'ऑनलाइन करें',
+    savedLocally: 'स्थानीय रूप से सहेजा गया',
+    waitingToSync: 'सिंक की प्रतीक्षा',
+    syncFailed: 'सिंक विफल',
+    inQueue: 'कतार में',
+
+    // Product Details & Trust
+    whyTrustTitle: 'इस उत्पाद पर भरोसा क्यों करें?',
+    whyTrustSubtitle: 'सत्यापित कारीगर साख एवं हस्तनिर्मित उत्पादन गारंटी',
+    viewAudit: 'ऑडिट देखें',
+    verified: 'सत्यापित',
+    inReview: 'समीक्षाधीन',
+    trustProgramTitle: 'आधिकारिक शिल्प सत्यापन कार्यक्रम',
+    trustProgramDesc: 'हम कारीगर घोषणाओं, क्लस्टर रिकॉर्ड और कार्यशाला प्रमाणों की निष्पक्ष जांच करते हैं।',
+    authenticityAuditLog: 'प्रामाणिकता ऑडिट लॉग',
+    artisanVerificationLevel: 'कारीगर सत्यापन स्तर',
+    closeAudit: 'ऑडिट बंद करें',
+    buyerPreviewMode: 'खरीदार पूर्वावलोकन मोड',
+    backToMyProducts: 'मेरे उत्पादों पर वापस',
+    cleaningTab: 'सफाई और धुलाई',
+    seasoningTab: 'तैयारी व सीज़निंग',
+    storageTab: 'रखरखाव व भंडारण',
+    aboutCreation: 'उत्पाद विवरण',
+    sendInquiryTo: 'कारीगर से सीधा प्रश्न पूछें',
+    masterCraftDetails: 'शिल्प विनिर्देश एवं विवरण',
+    materialsLabel: 'सामग्री',
+    craftTechniqueLabel: 'शिल्प तकनीक',
+    productionTimeLabel: 'निर्माण समय',
+    dimensionsLabel: 'आयाम व माप',
+    careInstructionsLabel: 'देखभाल एवं दीर्घायु निर्देश',
+    livingHeritage: 'शिल्प की ऐतिहासिक यात्रा',
+    aboutCraft: 'इस प्रामाणिक शिल्प के बारे में',
+    viewArtisanProfile: 'कारीगर प्रोफ़ाइल देखें',
+    requestQuoteBulk: 'थोक दर हेतु कोटेशन मांगें',
+    b2bWholesaleTitle: 'थोक खरीद एवं कॉर्पोरेट सोर्सिंग',
+    bulkAvailable: 'थोक उपलब्ध',
+    b2bWholesaleDesc: 'होटलों, कॉर्पोरेट उपहारों और खुदरा विक्रेताओं के लिए प्रत्यक्ष खरीद',
+    orderAvailability: 'ऑर्डर उपलब्धता',
+    moqLabel: 'न्यूनतम ऑर्डर मात्रा (MOQ)',
+    productionCapacity: 'उत्पादन क्षमता',
+    approxLeadTime: 'अनुमानित निर्माण समय',
+    tieredWholesalePrice: 'थोक रियायती मूल्य',
+    cleaningCareTip: 'हल्के गुनगुने पानी और प्राकृतिक स्पंज से धोएं। रासायनिक डिटर्जेंट का उपयोग न करें।',
+    seasoningCareTip: 'पहले उपयोग से पहले 8 घंटे साफ पानी में भिगोएं, फिर कुछ बूंदें शुद्ध तेल लगाकर सुखाएं।',
+    storageCareTip: 'सीलन मुक्त, हवादार स्थान पर रखें। नाजुक शिल्पों पर भारी वस्तुएं रखने से बचें।',
+
+    // Checkout & Forms
+    contactInfo: 'संपर्क जानकारी',
+    deliveryAddress: 'वितरण का पता',
+    streetAddress: 'सड़क का पता, मकान/फ्लैट संख्या',
+    landmarkOptional: 'लैंडमार्क (वैकल्पिक)',
+    city: 'शहर / कस्बा',
+    state: 'राज्य',
+    pincode: 'पिनकोड (6 अंक)',
+    paymentMethodLabel: 'भुगतान का तरीका',
+    itemsInOrder: 'ऑर्डर में आइटम',
+    directlyToArtisan: 'सीधे कारीगर को',
+    payNow: 'भुगतान करें और ऑर्डर दें',
+    secureGiCheckout: 'सुरक्षित जीआई चेकआउट',
+    checkoutSubtitle: 'कारीगर को सीधा भुगतान एवं पर्यावरण-अनुकूल पैकेजिंग',
+    paymentArchitecture: 'भुगतान प्रणाली',
+    demoSimulation: 'डेमो सिमुलेशन',
+    productionGateway: 'वास्तविक उत्पादन गेटवे',
+    selectPaymentRail: 'भुगतान विधि चुनें',
+    payAndPlaceOrder: 'भुगतान करें और ऑर्डर दें',
+
+    // Offline Sync & Demo
+    offlineSyncQueue: 'ऑफ़लाइन सिंक कतार',
+    syncNow: 'अभी सिंक करें',
+    retryFailed: 'विफल आइटम पुनः प्रयास करें',
+    clearSynced: 'सिंक किए गए साफ़ करें',
+    runDemoMode: 'डेमो मोड चलाएं',
+    allChangesSynced: 'सभी बदलाव सफलतापूर्वक सिंक हो गए हैं।',
+    offlineNoticeDetail: 'आप ऑफ़लाइन हैं। आपका काम इस डिवाइस पर सुरक्षित रूप से सहेजा गया है।',
+    offlineDemoTitle: 'ऑफ़लाइन-फर्स्ट सिंक डेमो',
+    offlineDemoSubtitle: 'ग्रामीण कारीगरों के लिए संपूर्ण ऑफ़लाइन कार्यप्रणाली',
+    startInteractiveDemo: 'इंटरैक्टिव सिमुलेशन प्रारंभ करें',
+
+    // Greetings & Studio
+    goodMorning: 'शुभ प्रभात',
+    goodAfternoon: 'शुभ दोपहर',
+    goodEvening: 'शुभ संध्या',
+    studioEncouraging: 'क्या आप अपनी कला को दुनिया के साथ साझा करने के लिए तैयार हैं?',
+    defaultGuildName: 'पारंपरिक शिल्पकार गिल्ड',
+    productRemovedToast: 'उत्पाद सूची से हटा दिया गया।',
+    shopLinkCopiedToast: 'उत्पाद लिंक कॉपी हो गया!',
+
+    // Artisan Profile & Story
+    artisanStory: 'साधना कथा',
+    bulkAndCustom: 'थोक सोर्सिंग',
+    masterBiography: 'जीवन वृत्त एवं शिल्प यात्रा',
+    honoursAndAwards: 'पुरस्कार एवं सम्मान',
+    bulkSourcingTitle: 'थोक व कस्टमाइज़ेशन',
+    directFromCluster: 'सीधे क्लस्टर कार्यशाला से',
+    addedToBagToast: 'बैग में जोड़ा गया',
+
+    // Welcome Screen
+    welcomeHeroSubtitle: 'आवाज-आधारित डिजिटल कैटलॉग से पारंपरिक कारीगरों को सीधे बाज़ार से जोड़ने वाला मंच।',
+    b2bCardSubtitle: 'थोक ऑर्डर एवं न्यूनतम मात्रा (MOQ)',
+    adminCardSubtitle: 'उत्पाद समीक्षा एवं जीआई प्रमाणन',
+
+    // Auth Screen Roles
+    roleArtisan: 'कारीगर',
+    roleArtisanDesc: 'पारंपरिक शिल्पकार',
+    roleBuyer: 'खरीदार',
+    roleBuyerDesc: 'कला संरक्षक व उपभोक्ता',
+    roleB2B: 'थोक खरीदार',
+    roleB2BDesc: 'थोक व कॉर्पोरेट ऑर्डर',
+    roleAdmin: 'प्रशासक',
+    roleAdminDesc: 'प्रमाणीकरण व ट्रस्ट',
+
+    // Order Actions Toasts
+    orderConfirmedToast: 'ऑर्डर की पुष्टि हो गई!',
+    orderDeclinedToast: 'ऑर्डर अस्वीकृत किया गया'
   }
 };
 

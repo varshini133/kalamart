@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Artisan, Product, Language, ScreenType } from '../types';
 import { ProductCard } from '../components/marketplace/ProductCard';
 import { WholesaleInquiryModal, WholesaleInquiryData } from '../components/marketplace/WholesaleInquiryModal';
+import { getTranslations } from '../services/localizationService';
 
 interface ArtisanProfileScreenProps {
   artisan: Artisan;
@@ -26,6 +27,7 @@ export const ArtisanProfileScreen: React.FC<ArtisanProfileScreenProps> = ({
   onToggleWishlist,
   language = 'en'
 }) => {
+  const t = getTranslations(language);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [showBulkModal, setShowBulkModal] = useState(false);
   const [activeTab, setActiveTab] = useState<'creations' | 'story' | 'bulk'>('creations');
@@ -255,7 +257,7 @@ export const ArtisanProfileScreen: React.FC<ArtisanProfileScreenProps> = ({
                 : 'border-transparent text-outline hover:text-primary'
             }`}
           >
-            {language === 'ta' ? 'கதை & பரம்பரை' : language === 'hi' ? 'साधना कथा' : 'Artisan Story'}
+            {t.artisanStory}
           </button>
 
           <button
@@ -266,7 +268,7 @@ export const ArtisanProfileScreen: React.FC<ArtisanProfileScreenProps> = ({
                 : 'border-transparent text-outline hover:text-primary'
             }`}
           >
-            {language === 'ta' ? 'மொத்த சப்ளை' : language === 'hi' ? 'थोक सोर्सिंग' : 'Bulk & Custom'}
+            {t.bulkAndCustom}
           </button>
         </div>
 
@@ -290,7 +292,7 @@ export const ArtisanProfileScreen: React.FC<ArtisanProfileScreenProps> = ({
                     }}
                     onAddToCart={(p) => {
                       onAddToCart(p);
-                      onShowToast(language === 'ta' ? 'பையில் சேர்க்கப்பட்டது' : language === 'hi' ? 'बैग में जोड़ा गया' : 'Added to bag');
+                      onShowToast(t.addedToBagToast);
                     }}
                     isWishlisted={!!wishlist[prod.id]}
                     onToggleWishlist={onToggleWishlist || (() => {})}
@@ -315,7 +317,7 @@ export const ArtisanProfileScreen: React.FC<ArtisanProfileScreenProps> = ({
             <div className="p-4 bg-surface-container-lowest rounded-3xl border border-outline-variant/30 shadow-2xs space-y-2">
               <h3 className="font-bold text-sm text-primary flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-secondary text-[18px]">history_edu</span>
-                <span>{language === 'ta' ? 'வாழ்க்கைக் குறிப்பு' : language === 'hi' ? 'जीवन वृत्त एवं शिल्प यात्रा' : 'Master Biography'}</span>
+                <span>{t.masterBiography}</span>
               </h3>
               <p className="text-on-surface-variant leading-relaxed">
                 {artisan.bio || `${artisan.name} is an internationally recognized custodian of Indian craft traditions from ${artisan.location}. Practicing for over ${artisan.yearsOfExperience || 'three decades'}, every piece is crafted strictly following canonical heritage methods passed down through master-apprentice guilds.`}
@@ -333,7 +335,7 @@ export const ArtisanProfileScreen: React.FC<ArtisanProfileScreenProps> = ({
               <div className="p-4 bg-surface-container-lowest rounded-3xl border border-outline-variant/30 shadow-2xs space-y-2">
                 <h3 className="font-bold text-sm text-primary flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-secondary text-[18px]">military_tech</span>
-                  <span>{language === 'ta' ? 'விருதுகள் மற்றும் கௌரவங்கள்' : language === 'hi' ? 'पुरस्कार एवं सम्मान' : 'Honours & Certifications'}</span>
+                  <span>{t.honoursAndAwards}</span>
                 </h3>
                 <div className="space-y-1.5">
                   {artisan.awards.map((award, i) => (
@@ -359,10 +361,10 @@ export const ArtisanProfileScreen: React.FC<ArtisanProfileScreenProps> = ({
                   </div>
                   <div>
                     <h3 className="font-bold text-sm text-primary">
-                      {language === 'ta' ? 'நேரடி மொத்த ஆர்டர்கள்' : language === 'hi' ? 'थोक व कस्टमाइज़ेशन' : 'Bulk & Institutional Sourcing'}
+                      {t.bulkSourcingTitle}
                     </h3>
                     <p className="text-[10px] text-outline">
-                      {language === 'ta' ? 'கூட்டுறவு பட்டறையிலிருந்து நேரடியாக' : language === 'hi' ? 'सीधे क्लस्टर कार्यशाला से' : 'Direct from master cluster workshop'}
+                      {t.directFromCluster}
                     </p>
                   </div>
                 </div>

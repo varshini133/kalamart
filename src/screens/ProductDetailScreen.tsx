@@ -205,14 +205,14 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
         <div className="p-3 rounded-2xl bg-secondary/10 border border-secondary/30 flex items-center justify-between gap-2 text-xs">
           <div className="flex items-center gap-2 text-primary font-bold">
             <span className="material-symbols-outlined text-[18px] text-secondary">visibility</span>
-            <span>Buyer Preview Mode</span>
+            <span>{t.buyerPreviewMode}</span>
           </div>
           <button
             type="button"
             onClick={() => onNavigate('my-products')}
             className="px-2.5 py-1 rounded-xl bg-secondary text-on-secondary font-bold text-[11px] hover:bg-secondary-container transition-colors cursor-pointer"
           >
-            Back to My Products
+            {t.backToMyProducts}
           </button>
         </div>
       )}
@@ -224,7 +224,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           className="flex items-center gap-1 text-xs font-bold text-secondary hover:underline"
         >
           <span className="material-symbols-outlined text-[16px]">arrow_back</span>
-          <span>{userRole === 'artisan' ? 'Back to My Products' : t.backToMarketplace}</span>
+          <span>{userRole === 'artisan' ? t.backToMyProducts : t.backToMarketplace}</span>
         </button>
 
         <div className="flex items-center gap-2">
@@ -382,7 +382,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
       <section className="p-4 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 shadow-xs space-y-2">
         <h3 className="font-bold text-xs uppercase tracking-wider text-primary flex items-center gap-1.5">
           <span className="material-symbols-outlined text-secondary text-[16px]">menu_book</span>
-          <span>{language === 'ta' ? 'படைப்பு விளக்கம்' : language === 'hi' ? 'उत्पाद विवरण' : 'About This Creation'}</span>
+          <span>{t.aboutCreation}</span>
         </h3>
         <p className="text-xs text-on-surface-variant leading-relaxed">
           {displayDescription}
@@ -428,11 +428,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
         >
           <span className="material-symbols-outlined text-[18px] text-secondary">chat</span>
           <span>
-            {language === 'ta'
-              ? `${product.artisanName} அவர்களிடம் கேள்வி கேட்கவும்`
-              : language === 'hi'
-              ? `${product.artisanName} से सीधा प्रश्न पूछें`
-              : `Send Inquiry to ${product.artisanName.split(' ')[0]}`}
+            {t.sendInquiryTo} ({product.artisanName.split(' ')[0]})
           </span>
         </button>
       </section>
@@ -442,7 +438,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
         <h3 className="font-bold text-sm text-primary flex items-center gap-2">
           <span className="material-symbols-outlined text-secondary text-[18px]">tune</span>
           <span>
-            {language === 'ta' ? 'கைவினை நுணுக்க விவரங்கள்' : language === 'hi' ? 'शिल्प विनिर्देश एवं विवरण' : 'Master Craft Details'}
+            {t.masterCraftDetails}
           </span>
         </h3>
 
@@ -451,7 +447,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           <div className="py-2.5 flex justify-between items-start gap-4">
             <span className="text-outline font-medium flex items-center gap-1.5 flex-shrink-0">
               <span className="material-symbols-outlined text-[15px] text-secondary">texture</span>
-              <span>Materials</span>
+              <span>{t.materialsLabel}</span>
             </span>
             <span className="font-bold text-primary text-right">
               {product.material || product.materialsList?.join(', ') || 'Natural Terracotta Clay & Botanical Glaze'}
@@ -462,7 +458,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           <div className="py-2.5 flex justify-between items-start gap-4">
             <span className="text-outline font-medium flex items-center gap-1.5 flex-shrink-0">
               <span className="material-symbols-outlined text-[15px] text-secondary">handyman</span>
-              <span>Craft Technique</span>
+              <span>{t.craftTechniqueLabel}</span>
             </span>
             <span className="font-bold text-primary text-right">
               {product.technique || 'Hand-thrown on Stone Wheel & Open Pit Fired'}
@@ -473,7 +469,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           <div className="py-2.5 flex justify-between items-start gap-4">
             <span className="text-outline font-medium flex items-center gap-1.5 flex-shrink-0">
               <span className="material-symbols-outlined text-[15px] text-secondary">schedule</span>
-              <span>Production Time</span>
+              <span>{t.productionTimeLabel}</span>
             </span>
             <span className="font-bold text-primary text-right">
               {product.productionTime || '4 to 6 days hand-curing'}
@@ -484,7 +480,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           <div className="py-2.5 flex justify-between items-start gap-4">
             <span className="text-outline font-medium flex items-center gap-1.5 flex-shrink-0">
               <span className="material-symbols-outlined text-[15px] text-secondary">square_foot</span>
-              <span>Dimensions</span>
+              <span>{t.dimensionsLabel}</span>
             </span>
             <span className="font-bold text-primary text-right">
               {product.capacity || 'Height: 11.5" • Diameter: 9.2" • Weight: 1.65 kg'}
@@ -495,7 +491,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           <div className="pt-3 space-y-2">
             <span className="text-outline font-medium flex items-center gap-1.5">
               <span className="material-symbols-outlined text-[15px] text-secondary">sanitizer</span>
-              <span>Care & Longevity Instructions</span>
+              <span>{t.careInstructionsLabel}</span>
             </span>
 
             {/* Interactive Care Tabs */}
@@ -510,18 +506,15 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
                       : 'bg-surface-container text-on-surface hover:bg-surface-container-high'
                   }`}
                 >
-                  {tab}
+                  {tab === 'cleaning' ? t.cleaningTab : tab === 'seasoning' ? t.seasoningTab : t.storageTab}
                 </button>
               ))}
             </div>
 
             <p className="text-[11px] text-on-surface-variant bg-surface-container-low p-2.5 rounded-2xl leading-relaxed border border-outline-variant/20">
-              {selectedCareTab === 'cleaning' &&
-                'Gently rinse with lukewarm water and a natural coir or soft sponge. Never use synthetic detergents or harsh chemicals, as natural porous surfaces absorb chemical fragrances.'}
-              {selectedCareTab === 'seasoning' &&
-                'Before first use, soak completely in fresh clean water for 8 hours, then rub with a few drops of pure sesame or mustard oil and air dry under gentle sunlight.'}
-              {selectedCareTab === 'storage' &&
-                'Store in a well-ventilated, dry shelf away from humid direct steam. Avoid stacking heavy metal items on delicate terracotta or brass filigree.'}
+              {selectedCareTab === 'cleaning' && t.cleaningCareTip}
+              {selectedCareTab === 'seasoning' && t.seasoningCareTip}
+              {selectedCareTab === 'storage' && t.storageCareTip}
             </p>
           </div>
         </div>
@@ -537,13 +530,13 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
               </div>
               <div>
                 <h3 className="font-bold text-sm text-primary flex items-center gap-1.5">
-                  <span>B2B Wholesale & Bulk Sourcing</span>
+                  <span>{t.b2bWholesaleTitle}</span>
                   <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold border border-emerald-200">
-                    Bulk Available
+                    {t.bulkAvailable}
                   </span>
                 </h3>
                 <p className="text-[11px] text-on-surface-variant">
-                  Direct procurement for hotels, corporate gifting, retailers & export buyers
+                  {t.b2bWholesaleDesc}
                 </p>
               </div>
             </div>
@@ -553,16 +546,16 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 rounded-2xl bg-surface-container-low border border-outline-variant/20 text-xs">
             {/* 1. Bulk Order Available */}
             <div>
-              <span className="text-[10px] text-outline block">Order Availability</span>
+              <span className="text-[10px] text-outline block">{t.orderAvailability}</span>
               <span className="font-bold text-emerald-700 flex items-center gap-1 mt-0.5">
                 <span className="material-symbols-outlined text-[14px]">verified</span>
-                <span>Bulk Available</span>
+                <span>{t.bulkAvailable}</span>
               </span>
             </div>
 
             {/* 2. Minimum Order Quantity (MOQ) */}
             <div>
-              <span className="text-[10px] text-outline block">Minimum Order (MOQ)</span>
+              <span className="text-[10px] text-outline block">{t.moqLabel}</span>
               <span className="font-bold text-primary flex items-center gap-1 mt-0.5">
                 <span className="material-symbols-outlined text-[14px] text-secondary">inventory_2</span>
                 <span>{product.moq || 10} units</span>
@@ -571,7 +564,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
 
             {/* 3. Production Capacity */}
             <div>
-              <span className="text-[10px] text-outline block">Production Capacity</span>
+              <span className="text-[10px] text-outline block">{t.productionCapacity}</span>
               <span className="font-bold text-primary flex items-center gap-1 mt-0.5 truncate">
                 <span className="material-symbols-outlined text-[14px] text-secondary">factory</span>
                 <span>{product.productionCapacity || '100 units / month'}</span>
@@ -580,7 +573,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
 
             {/* 4. Approximate Lead Time */}
             <div>
-              <span className="text-[10px] text-outline block">Approx. Lead Time</span>
+              <span className="text-[10px] text-outline block">{t.approxLeadTime}</span>
               <span className="font-bold text-primary flex items-center gap-1 mt-0.5">
                 <span className="material-symbols-outlined text-[14px] text-secondary">schedule</span>
                 <span>{product.approxLeadTime || '14–21 days'}</span>
@@ -591,7 +584,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           {/* Wholesale Pricing Tier & Request Quote Action */}
           <div className="p-3.5 rounded-2xl bg-secondary/10 border border-secondary/25 flex items-center justify-between gap-3 flex-wrap">
             <div>
-              <div className="text-[10px] text-outline">Tiered Wholesale Price</div>
+              <div className="text-[10px] text-outline">{t.tieredWholesalePrice}</div>
               <div className="flex items-baseline gap-2">
                 <span className="text-xl font-bold font-serif text-secondary">
                   ₹{(product.bulkPrice || Math.round(product.price * 0.75)).toLocaleString('en-IN')}
@@ -610,7 +603,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
               className="px-4 py-2.5 rounded-2xl bg-primary text-on-primary font-bold text-xs flex items-center gap-1.5 shadow-sm hover:bg-primary-container active:scale-95 transition-all cursor-pointer"
             >
               <span className="material-symbols-outlined text-[16px] text-secondary">request_quote</span>
-              <span>Request a Quote (Bulk RFQ)</span>
+              <span>{t.requestQuoteBulk}</span>
             </button>
           </div>
         </section>
@@ -622,11 +615,11 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           <div className="flex items-center gap-1.5 text-secondary mb-0.5">
             <span className="material-symbols-outlined text-[16px]">history_edu</span>
             <span className="text-[11px] uppercase tracking-wider font-bold">
-              {language === 'ta' ? 'வரலாற்றுப் பாரம்பரியம்' : language === 'hi' ? 'शिल्प की ऐतिहासिक यात्रा' : 'Living Heritage & Cultural Lineage'}
+              {t.livingHeritage}
             </span>
           </div>
           <h2 className="font-bold text-base font-sans text-primary">
-            {language === 'ta' ? 'இந்தக் கைவினையைப் பற்றி' : language === 'hi' ? 'इस प्रामाणिक शिल्प के बारे में' : 'About the Craft'}
+            {t.aboutCraft}
           </h2>
           <p className="text-xs text-on-surface-variant leading-relaxed mt-1">
             {product.storyBehindProduct ||
@@ -757,7 +750,7 @@ export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
           className="w-full py-3 rounded-full bg-primary text-on-primary text-xs font-bold flex items-center justify-center gap-2 hover:bg-primary-container active:scale-95 transition-all shadow-md"
         >
           <span className="material-symbols-outlined text-[17px] text-secondary">account_circle</span>
-          <span>View Artisan Profile</span>
+          <span>{t.viewArtisanProfile}</span>
           <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
         </button>
       </section>

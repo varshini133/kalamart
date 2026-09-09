@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Product } from '../../types';
 import { trustService } from '../../services/trustService';
 import { TrustBadgesRow } from './TrustBadgesRow';
+import { getTranslations } from '../../services/localizationService';
 
 interface WhyTrustProductSectionProps {
   product: Product;
@@ -14,21 +15,10 @@ export const WhyTrustProductSection: React.FC<WhyTrustProductSectionProps> = ({
 }) => {
   const [showAuditModal, setShowAuditModal] = useState(false);
   const trustDetails = trustService.getProductTrustDetails(product);
+  const t = getTranslations(language);
 
-  const isTa = language === 'ta';
-  const isHi = language === 'hi';
-
-  const sectionTitle = isTa
-    ? 'இந்த தயாரிப்பை ஏன் நம்ப வேண்டும்?'
-    : isHi
-    ? 'इस उत्पाद पर भरोसा क्यों करें?'
-    : 'Why trust this product?';
-
-  const sectionSubtitle = isTa
-    ? 'சரிபார்க்கப்பட்ட கைவினைஞர் சான்றுகள் மற்றும் கைமுறை உற்பத்தி உத்தரவாதம்'
-    : isHi
-    ? 'सत्यापित कारीगर साख एवं हस्तनिर्मित उत्पादन गारंटी'
-    : 'Transparent provenance, artisan verification, and curated craft audit';
+  const sectionTitle = t.whyTrustTitle;
+  const sectionSubtitle = t.whyTrustSubtitle;
 
   return (
     <section className="p-4 sm:p-5 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 shadow-xs space-y-4">
@@ -53,7 +43,7 @@ export const WhyTrustProductSection: React.FC<WhyTrustProductSectionProps> = ({
           className="shrink-0 px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary text-[11px] font-bold border border-outline-variant/30 transition-all flex items-center gap-1"
         >
           <span className="material-symbols-outlined text-[13px] text-secondary">policy</span>
-          <span>View Audit</span>
+          <span>{t.viewAudit}</span>
         </button>
       </div>
 
@@ -93,11 +83,11 @@ export const WhyTrustProductSection: React.FC<WhyTrustProductSectionProps> = ({
                   {item.verified ? (
                     <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded-full bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold">
                       <span className="material-symbols-outlined text-[11px]">check</span>
-                      Verified
+                      {t.verified}
                     </span>
                   ) : (
                     <span className="inline-flex items-center px-1.5 py-0.2 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 text-[10px] font-medium">
-                      In Review
+                      {t.inReview}
                     </span>
                   )}
                 </div>
@@ -117,10 +107,10 @@ export const WhyTrustProductSection: React.FC<WhyTrustProductSectionProps> = ({
         </span>
         <div className="space-y-0.5">
           <span className="font-bold text-primary block">
-            Official Craft Verification Program (Integration Ready)
+            {t.trustProgramTitle}
           </span>
           <p className="leading-relaxed">
-            KalaConnect is architected for prospective integration with recognized regional and national craft registries. We verify individual artisan declarations, cluster records, and workshop proofs without making false or unsubstantiated statutory certification claims.
+            {t.trustProgramDesc}
           </p>
         </div>
       </div>
@@ -139,7 +129,7 @@ export const WhyTrustProductSection: React.FC<WhyTrustProductSectionProps> = ({
               <div>
                 <div className="inline-flex items-center gap-1 text-[10px] font-bold text-secondary uppercase tracking-wider mb-0.5">
                   <span className="material-symbols-outlined text-[13px]">verified</span>
-                  <span>Authenticity Audit Log</span>
+                  <span>{t.authenticityAuditLog}</span>
                 </div>
                 <h3 className="font-bold text-base text-primary">
                   {product.title}
@@ -248,7 +238,7 @@ export const WhyTrustProductSection: React.FC<WhyTrustProductSectionProps> = ({
                 onClick={() => setShowAuditModal(false)}
                 className="px-4 py-1.5 rounded-full bg-primary text-on-primary font-bold text-xs hover:opacity-90 transition-opacity"
               >
-                Close Audit View
+                {t.closeAudit}
               </button>
             </div>
           </div>

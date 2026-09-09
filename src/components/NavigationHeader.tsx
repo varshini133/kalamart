@@ -50,29 +50,13 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
       case 'profile':
         return t.navProfile;
       case 'b2b-portal':
-        return currentLanguage === 'ta'
-          ? 'மொத்த வர்த்தக மையம்'
-          : currentLanguage === 'hi'
-          ? 'थोक एवं निर्यात केंद्र'
-          : 'B2B Wholesale Hub';
+        return t.b2bPortal;
       case 'admin-portal':
-        return currentLanguage === 'ta'
-          ? 'சரிபார்ப்பு & நம்பிக்கை மையம்'
-          : currentLanguage === 'hi'
-          ? 'सत्यापन एवं ट्रस्ट पोर्टल'
-          : 'Admin Trust Portal';
+        return t.adminTrustPortal;
       case 'my-products':
-        return currentLanguage === 'ta'
-          ? 'என் கைவினைப் பொருட்கள்'
-          : currentLanguage === 'hi'
-          ? 'मेरे उत्पाद'
-          : 'My Products';
+        return t.myProducts;
       case 'product-manage':
-        return currentLanguage === 'ta'
-          ? 'பொருள் மேலாண்மை'
-          : currentLanguage === 'hi'
-          ? 'उत्पाद प्रबंधन'
-          : 'Product Management';
+        return t.productManagement;
       default:
         return 'KalaMart';
     }
@@ -205,20 +189,20 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
                 type="button"
                 id="header-demo-walkthrough-btn"
                 onClick={onOpenDemo}
-                aria-label="Hackathon Demo Walkthrough"
-                title="3-5 Min Pitch Walkthrough Guide"
+                aria-label={t.pitchDemo}
+                title={t.pitchDemo}
                 className="h-9 px-2.5 rounded-full bg-secondary/15 hover:bg-secondary/25 text-secondary flex items-center gap-1 text-[11px] font-extrabold border border-secondary/40 transition-all active:scale-95 cursor-pointer shadow-xs"
               >
                 <span className="material-symbols-outlined text-[16px] text-secondary">bolt</span>
-                <span className="hidden sm:inline">Pitch Demo</span>
+                <span className="hidden sm:inline">{t.pitchDemo}</span>
               </button>
             )}
 
             {/* B2B Wholesale Hub Button */}
             <button
               onClick={() => onNavigate('b2b-portal')}
-              aria-label="B2B Wholesale Portal"
-              title="B2B Wholesale & Bulk Sourcing"
+              aria-label={t.b2bPortal}
+              title={t.b2bPortal}
               className={`h-9 px-2.5 rounded-full flex items-center gap-1 text-[11px] font-bold transition-all active:scale-95 border ${
                 currentScreen === 'b2b-portal'
                   ? 'bg-secondary text-on-secondary border-secondary shadow-xs'
@@ -226,7 +210,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
               }`}
             >
               <span className="material-symbols-outlined text-[15px] text-secondary">corporate_fare</span>
-              <span className="hidden sm:inline">B2B</span>
+              <span className="hidden sm:inline">{t.b2b}</span>
             </button>
 
             {/* Notification Bell Button */}
@@ -234,8 +218,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
               <button
                 id="header-notifications-btn"
                 onClick={onOpenNotifications}
-                aria-label="Notification Center"
-                title="Notifications"
+                aria-label={t.notifications}
+                title={t.notifications}
                 className="relative w-9 h-9 rounded-full bg-surface-container-high/80 text-primary flex items-center justify-center hover:bg-surface-container-highest transition-colors active:scale-95 border border-outline-variant/30"
               >
                 <span className="material-symbols-outlined text-[18px]">notifications</span>
@@ -250,7 +234,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
             {/* Cart Button */}
             <button
               onClick={onOpenCart}
-              aria-label="View Cart"
+              aria-label={t.viewCart}
+              title={t.viewCart}
               className="relative w-9 h-9 rounded-full bg-surface-container-high/80 text-primary flex items-center justify-center hover:bg-surface-container-highest transition-colors active:scale-95"
             >
               <span className="material-symbols-outlined text-[18px]">shopping_bag</span>
@@ -264,7 +249,8 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
             {/* Profile Avatar Button */}
             <button
               onClick={() => onNavigate('profile')}
-              aria-label="User Profile"
+              aria-label={t.userProfile}
+              title={t.userProfile}
               className="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm hover:opacity-90 active:scale-95 transition-transform overflow-hidden ring-1 ring-secondary/30"
             >
               {user?.avatar ? (

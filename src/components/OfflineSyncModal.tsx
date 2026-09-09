@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { OfflineSyncItem, Language } from '../types';
 import { offlineSyncService } from '../services/offlineSyncService';
+import { getTranslations } from '../services/localizationService';
 
 interface OfflineSyncModalProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
   onRunDemo,
   onShowToast
 }) => {
+  const t = getTranslations(language);
   const [queue, setQueue] = useState<OfflineSyncItem[]>(() => offlineSyncService.getSyncQueue());
   const [isOnline, setIsOnline] = useState<boolean>(() => offlineSyncService.isOnline());
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
@@ -145,7 +147,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-bold text-sm text-primary">Offline Sync Queue</h3>
+                <h3 className="font-bold text-sm text-primary">{t.offlineSyncQueue}</h3>
                 <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
                   isOnline ? 'bg-emerald-500/15 text-emerald-800' : 'bg-amber-500/15 text-amber-800'
                 }`}>
@@ -154,7 +156,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
               </div>
               <p className="text-[11px] text-on-surface-variant">
                 {pendingItems.length === 0
-                  ? 'All changes synced successfully.'
+                  ? t.allChangesSynced
                   : `${pendingItems.length} changes waiting to sync`}
               </p>
             </div>
@@ -173,7 +175,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
           <div className="px-4 py-2.5 bg-amber-500/15 border-b border-amber-500/30 flex items-center justify-between gap-2">
             <div className="flex items-center gap-2 text-xs font-semibold text-amber-950 dark:text-amber-100">
               <span className="material-symbols-outlined text-[18px] text-amber-600 shrink-0">wifi_off</span>
-              <span>You're offline. Your work is safely saved on this device.</span>
+              <span>{t.offlineNoticeDetail}</span>
             </div>
             <button
               type="button"
@@ -202,7 +204,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
               <span className={`material-symbols-outlined text-[16px] ${isSyncing ? 'animate-spin' : ''}`}>
                 sync
               </span>
-              <span>{isSyncing ? 'Syncing...' : 'Sync Now'}</span>
+              <span>{isSyncing ? 'Syncing...' : t.syncNow}</span>
             </button>
 
             {failedItems.length > 0 && (
@@ -212,7 +214,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
                 className="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-rose-500/10 text-rose-800 border border-rose-500/20 hover:bg-rose-500/20 transition-all flex items-center gap-1 cursor-pointer"
               >
                 <span className="material-symbols-outlined text-[15px]">replay</span>
-                <span>Retry Failed ({failedItems.length})</span>
+                <span>{t.retryFailed} ({failedItems.length})</span>
               </button>
             )}
 
@@ -222,7 +224,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
                 onClick={handleClearSynced}
                 className="px-2.5 py-1.5 rounded-xl text-xs font-medium text-on-surface-variant hover:bg-surface-container transition-all"
               >
-                Clear Synced ({syncedItems.length})
+                {t.clearSynced} ({syncedItems.length})
               </button>
             )}
           </div>
@@ -238,7 +240,7 @@ export const OfflineSyncModal: React.FC<OfflineSyncModalProps> = ({
               className="px-3 py-1.5 rounded-xl text-xs font-bold bg-secondary/15 text-secondary border border-secondary/30 hover:bg-secondary/25 transition-all flex items-center gap-1.5 cursor-pointer ml-auto"
             >
               <span className="material-symbols-outlined text-[16px]">play_circle</span>
-              <span>Run Demo Mode</span>
+              <span>{t.runDemoMode}</span>
             </button>
           )}
         </div>
